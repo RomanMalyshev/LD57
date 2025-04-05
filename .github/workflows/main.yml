@@ -31,9 +31,9 @@ jobs:
       # Cache
       - name: Restore Library Cache
         run: |
-              if [ -d "/mnt/build_cache/analTest/Library-${{ matrix.targetPlatform }}" ]; then
+              if [ -d "/mnt/build_cache/ld57/Library-${{ matrix.targetPlatform }}" ]; then
                 echo "Restoring Library cache..."
-                cp -r /mnt/build_cache/analTest/Library-${{ matrix.targetPlatform }} Library
+                cp -r /mnt/build_cache/ld57/Library-${{ matrix.targetPlatform }} Library
               else
                 echo "No Library cache found. A fresh build will be performed."
               fi
@@ -54,9 +54,9 @@ jobs:
       - name: Store Library Cache
         run: |
               echo "Saving Library cache..."
-              mkdir -p /mnt/build_cache/analTest
-              rm -rf /mnt/build_cache/analTest/Library-${{ matrix.targetPlatform }}
-              cp -r Library /mnt/build_cache/analTest/Library-${{ matrix.targetPlatform }}
+              mkdir -p /mnt/build_cache/ld57
+              rm -rf /mnt/build_cache/ld57/Library-${{ matrix.targetPlatform }}
+              cp -r Library /mnt/build_cache/ld57/Library-${{ matrix.targetPlatform }}
           
   deploy:
     name: Butler Push to Itch
