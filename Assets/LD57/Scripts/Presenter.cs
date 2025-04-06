@@ -13,6 +13,11 @@ public class Presenter
     public SubscribableAction<bool> OnEndOfReserchButtonClicked = new();
     public SubscribableAction<bool> OnReserchIsDone = new();
     public SubscribableAction<string> OnInfoPanelTextChange = new();
+    public SubscribableAction<Vector2> OnTargetAcquisition = new();
+    public SubscribableAction<Vector2> OnTargetAreaEnter = new();
+    public SubscribableAction<int> OnGameStarted = new();
+    public SubscribableAction<float> OnGameVolumeChange = new();
+    public SubscribableAction<float> OnLocation = new();
     
     
     
