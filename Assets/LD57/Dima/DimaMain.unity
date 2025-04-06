@@ -417,7 +417,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -519,7 +519,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,7 +626,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -778,6 +778,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1452130896}
   - component: {fileID: 1452130897}
+  - component: {fileID: 1452130900}
+  - component: {fileID: 1452130899}
+  - component: {fileID: 1452130898}
   m_Layer: 0
   m_Name: Space
   m_TagString: Untagged
@@ -812,6 +815,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27417fa6045113e4fa27ca5494c2929b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  CameraRoot: {fileID: 0}
+--- !u!114 &1452130898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452130895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7713bba3163a2ed4582fffee880f342a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetCamera: {fileID: 0}
+  _raycastLength: 100
+  _raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _targetTag: SpaceObject
+--- !u!114 &1452130899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452130895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980eac6539ac9ad4181e3c37ac14a965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoomSound: {fileID: 0}
+  MoveSound: {fileID: 0}
+  ZoomActiveThreshold: 0.05
+  MoveActiveThreshold: 0.05
+--- !u!114 &1452130900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452130895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9bec40b903b4d4e820e2a431f7b0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  CameraRoot: {fileID: 0}
+  _rotationSpeed: 50
+  _rotationSmoothTime: 0.1
+  _zoomSmoothTime: 0.1
+  _minFov: 30
+  _maxFov: 60
+  _minPitch: -89
+  _maxPitch: 89
+  _stopThreshold: 2
 --- !u!1 &1497436502
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +928,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1449,6 +1449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dc2b6187e9f93489119c1dc366a66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _telescopeControls: {fileID: 0}
+  _telescopeSettings: {fileID: 0}
+  _infoPanel: {fileID: 0}
+  _gameSettingsPanel: {fileID: 0}
+  _lokatorPanel: {fileID: 0}
 --- !u!1 &1940320940
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,4 @@ public class Presenter
     public SubscribableAction<float> OnGameVolumeChange = new();
     public SubscribableAction<float> OnLocation = new();
     
-    
-    
 }
