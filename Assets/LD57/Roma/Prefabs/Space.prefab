@@ -168,7 +168,7 @@ MonoBehaviour:
       width: 1
       height: 1
   clampSizeMin: 0
-  softness: 16
+  softness: 0
   stretch: 0
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
@@ -726,6 +726,108 @@ MonoBehaviour:
   parent: {fileID: 8275501272062284275}
   cachedMeshFilter: {fileID: 1403483328248536716}
   cachedMeshRenderer: {fileID: 5413724060258178816}
+--- !u!1 &1219731899259846091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6328610407945689802}
+  - component: {fileID: 5565252133097239837}
+  - component: {fileID: 8415646353661674140}
+  - component: {fileID: 6449460320164255181}
+  m_Layer: 0
+  m_Name: SgtStarfieldModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6328610407945689802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219731899259846091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2279585944868606228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5565252133097239837
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219731899259846091}
+  m_Mesh: {fileID: 0}
+--- !u!23 &8415646353661674140
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219731899259846091}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6449460320164255181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219731899259846091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 71189051163498413}
+  cachedMeshFilter: {fileID: 5565252133097239837}
+  cachedMeshRenderer: {fileID: 8415646353661674140}
 --- !u!1 &1537241210995375424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1179,7 @@ MonoBehaviour:
       width: 1
       height: 1
   clampSizeMin: 0
-  softness: 16
+  softness: 0
   stretch: 0
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
@@ -1182,7 +1284,7 @@ MonoBehaviour:
       width: 1
       height: 1
   clampSizeMin: 0
-  softness: 16
+  softness: 0
   stretch: 0
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
@@ -1691,7 +1793,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: f4d250dee2e32264b8f1fae76d023437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1712,7 +1814,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ab4465ab72ca5544da8e8dd1110b6973, type: 3}
   m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1840,6 +1942,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1523623695068368310}
+  - {fileID: 2279585944868606228}
   - {fileID: 8789554321841327435}
   - {fileID: 267372730481875064}
   - {fileID: 4268455048172867668}
@@ -1906,7 +2009,7 @@ MonoBehaviour:
       width: 1
       height: 1
   clampSizeMin: 0
-  softness: 16
+  softness: 0
   stretch: 0
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
@@ -2106,6 +2209,111 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7.6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8360753566582412294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2279585944868606228}
+  - component: {fileID: 71189051163498413}
+  m_Layer: 0
+  m_Name: Starfield Dome (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2279585944868606228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360753566582412294}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -99.6, z: 0}
+  m_LocalScale: {x: 16.8, y: 16.8, z: 16.8}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 6328610407945689802}
+  m_Father: {fileID: 5279252640831492510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71189051163498413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360753566582412294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
+  color: {r: 1, g: 0, b: 0, a: 1}
+  brightness: 11.24
+  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  atlas:
+    layout: 0
+    layoutColumns: 1
+    layoutRows: 1
+    layoutRects:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+  clampSizeMin: 0
+  softness: 0
+  stretch: 0
+  stretchVector: {x: 0, y: 0, z: 0}
+  stretchScale: 9.27
+  stretchLimit: 10000
+  model: {fileID: 6449460320164255181}
+  seed: 36
+  radius: 7.3
+  bias: 1
+  starCount: 219
+  starColors:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  starRadiusMin: 0.04
+  starRadiusMax: 0.05
+  starRadiusBias: 4.32
+  starPulseSpeedMin: 0.291
+  starPulseSpeedMax: 1
 --- !u!1 &8406909573854000863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2374,7 @@ MonoBehaviour:
       width: 1
       height: 1
   clampSizeMin: 0
-  softness: 16
+  softness: 0
   stretch: 0
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
@@ -2287,7 +2495,7 @@ MonoBehaviour:
   _maxFov: 60
   _minPitch: -89
   _maxPitch: 89
-  _stopThreshold: 2
+  _stopThreshold: 0.5
 --- !u!114 &5054701558671172036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,8 +2510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZoomSound: {fileID: 8604235392520550769}
   MoveSound: {fileID: 8571033516663823149}
-  ZoomActiveThreshold: 0.05
-  MoveActiveThreshold: 0.05
+  ZoomActiveThreshold: 0.5
+  MoveActiveThreshold: 0.5
 --- !u!114 &697404372857614043
 MonoBehaviour:
   m_ObjectHideFlags: 0
