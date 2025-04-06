@@ -156,7 +156,7 @@ MonoBehaviour:
   sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
   color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   brightness: 1.35
-  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  mainTex: {fileID: 2800000, guid: 21e254ab4724da1429576c9e045ce231, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
   seed: 36
   radius: 7.3
   bias: 1
-  starCount: 219
+  starCount: 426
   starColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1949,6 +1949,92 @@ Transform:
   - {fileID: 278091431768118007}
   m_Father: {fileID: 2690126326900073283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5831782894962669970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7140544009190477349}
+  - component: {fileID: 1666829206809280842}
+  - component: {fileID: 3770545184488271063}
+  m_Layer: 0
+  m_Name: BackGround Clouds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7140544009190477349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831782894962669970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2690126326900073283}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1666829206809280842
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831782894962669970}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3770545184488271063
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831782894962669970}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2586ab71b375a7c4ea0d3aac014e7854, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6022281700982192297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +2083,7 @@ MonoBehaviour:
   sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
   color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   brightness: 1.5
-  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  mainTex: {fileID: 2800000, guid: 4ee12ec80de2e9347bd86fe1712106cb, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -2257,7 +2343,7 @@ MonoBehaviour:
   sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
   color: {r: 1, g: 0, b: 0, a: 1}
   brightness: 11.24
-  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  mainTex: {fileID: 2800000, guid: 3ffcce23571798443bd79b888ace3403, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -2452,6 +2538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7140544009190477349}
   - {fileID: 7316835014823871186}
   - {fileID: 5279252640831492510}
   - {fileID: 8205222964264413343}
