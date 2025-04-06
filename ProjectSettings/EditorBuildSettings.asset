@@ -9,7 +9,8 @@ EditorBuildSettings:
     path: Assets/LD57/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Plugins/CW/SpaceGraphicsToolkit/Features/Starfield/Examples/33 Dome.unity
+    path: Assets/Third party/CW/SpaceGraphicsToolkit/Features/Starfield/Examples/33
+      Dome.unity
     guid: 0f76ea30094c38f47bff1e4ee6bf4e3b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
