@@ -36,7 +36,6 @@ public class TelescopeControls : MonoBehaviour
         if (_isControlButtonDown || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             G.Presenter.OnMove?.Invoke(_direction);
-            Debug.Log(_wASDdirection);
         }
     }
     
