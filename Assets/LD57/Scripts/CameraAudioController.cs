@@ -34,18 +34,15 @@ public class CameraAudioController : MonoBehaviour
 
         // Start sound if zoom input is active OR smoothing is happening, and sound isn't already playing
         bool shouldPlayZoom = _movementController.IsZoomSmoothing;
-        Debug.Log($" _movementController.IsApplyingZoomInput: { _movementController.IsApplyingZoomInput}   _movementController.IsZoomSmoothing { _movementController.IsZoomSmoothing}");
         if (shouldPlayZoom && !_isZoomSoundPlaying)
         {
-            Debug.Log(shouldPlayZoom);
-            ZoomSound.StartLoop();
+             ZoomSound.StartLoop();
             _isZoomSoundPlaying = true;
         }
         // Stop sound if no zoom input AND smoothing has finished, and sound is currently playing
         else if (!shouldPlayZoom && _isZoomSoundPlaying)
         {
-            Debug.Log(shouldPlayZoom);
-            ZoomSound.StopLoop();
+             ZoomSound.StopLoop();
             _isZoomSoundPlaying = false;
         }
     }
