@@ -1,16 +1,24 @@
+using System;
 using UnityEngine;
 
 public class InSpaceObject : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float DistanceFromViewer;
+    public bool Exploreded;
+    
+ 
+    private void Start()
     {
-        
+        transform.LookAt(Camera.main.transform); 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+       
+    }
+
+    public void OnMouseDown()
+    {
+        Debug.Log("MouseDown");
     }
 }

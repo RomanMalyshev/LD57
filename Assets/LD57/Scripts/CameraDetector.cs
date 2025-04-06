@@ -16,10 +16,11 @@ public class CameraDetector : MonoBehaviour
     // Public properties to access detection results
     public Transform CurrentlyDetectedObject { get; private set; }
     public bool IsDetectingTarget { get; private set; }
+    public Action<SpaceObjects> ObjectDetected;
     public RaycastHit LastHitInfo { get; private set; }
 
     private bool _hasWarnedMissingCamera = false;
-
+    
     private void Awake()
     {
         if (TargetCamera == null)
@@ -61,19 +62,18 @@ public class CameraDetector : MonoBehaviour
                 CurrentlyDetectedObject = null;
             }
         }
-        else
-        {
-            // Hit nothing
-            IsDetectingTarget = false;
-            CurrentlyDetectedObject = null;
-            // Clear LastHitInfo if needed, depending on desired behavior when hitting nothing
-            // LastHitInfo = default; 
-        }
-
-        if (previouslyDetecting && !IsDetectingTarget && previousObject != null)
-        {
-            Debug.Log($"Stopped detecting Target '{_targetTag}': {previousObject.name}", this);
-        }
+     //  else
+     //  {
+     //      // Hit nothing
+     //      IsDetectingTarget = false;
+     //      CurrentlyDetectedObject = null;
+     //      // Clear LastHitInfo if needed, depending on desired behavior when hitting nothing
+     //      // LastHitInfo = default; 
+     //  }//
+     //  if (previouslyDetecting && !IsDetectingTarget && previousObject != null)
+     //  {
+     //      Debug.Log($"Stopped detecting Target '{_targetTag}': {previousObject.name}", this);
+     //  }
     }
 
     // Draw Gizmos to visualize the detection ray

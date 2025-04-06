@@ -159,7 +159,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlurHD: 1
-    - _BlurIntensity: 79.1
+    - _BlurIntensity: 71.5
     - _Brightness: -0.1
     - _BumpScale: 1
     - _ChromAberrAlpha: 0.4

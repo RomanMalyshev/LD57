@@ -18,5 +18,9 @@ public class Presenter
     public SubscribableAction<int> OnGameStarted = new();
     public SubscribableAction<float> OnGameVolumeChange = new();
     public SubscribableAction<float> OnLocation = new();
-    
+
+
+
+    public SubscribableField<bool> ResearchState = new();
+
 }

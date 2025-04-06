@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Globals : MonoBehaviour
@@ -13,9 +14,10 @@ public class Globals : MonoBehaviour
     {
         G = this;
         Presenter = new Presenter();
-        
+
         _space.Init();
         _controlPanel.Init();
 
     }
+
 }
