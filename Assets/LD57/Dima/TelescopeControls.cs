@@ -26,17 +26,17 @@ public class TelescopeControls : MonoBehaviour
 
         if (_isControlButtonDown)
         {
-            _direction = (_wASDdirection + _buttonsDirection).normalized * _speed * Time.deltaTime;
+            _direction = (_wASDdirection + _buttonsDirection).normalized * (_speed * Time.deltaTime);
         }
         else
         {
-            _direction = _wASDdirection.normalized  * _speed * Time.deltaTime;
+            _direction = _wASDdirection.normalized * (_speed * Time.deltaTime);
         }
 
         if (_isControlButtonDown || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             G.Presenter.OnMove?.Invoke(_direction);
-            //Debug.Log(_direction);
+            Debug.Log(_wASDdirection);
         }
     }
     

@@ -20,7 +20,9 @@ public class TelescopeSettings : MonoBehaviour
     
     public void Init()
     {
-        G.Presenter.OnZoom.Subscribe(GetZoomValue);
+        
+        //TODO: так замыкать нельзя, спроси протом почему
+       // G.Presenter.OnZoom.Subscribe(GetZoomValue);
         
         _opticFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.Optic));
         _radioFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.Radio));
@@ -29,6 +31,13 @@ public class TelescopeSettings : MonoBehaviour
         
         G.Presenter.OnReserchIsDone.Subscribe(SetReserchStatus);
         _endReserchButton.onClick.AddListener(() => EndReserchButtonClicked());
+        _zoomSlider.onValueChanged.AddListener(ZoomChange);
+    }
+
+    private void ZoomChange(float value)
+    {
+        _zoom = value;
+        G.Presenter.OnZoom?.Invoke(_zoom);
     }
 
     void SetFilters(FiltersType filtersType)
