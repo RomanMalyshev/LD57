@@ -4,7 +4,7 @@ using static Globals;
 
 public class LokatorPanel : MonoBehaviour
 {
-    [SerializeField] private Image _lokator;
+    [SerializeField] private GameObject _lokator;
 
     public void Init()
     {

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using static Globals;
 
@@ -24,7 +23,7 @@ public class ControlButton : MonoBehaviour
                 direction = Vector2.left;
                 break;
         }
-        //Debug.Log(direction);
+        
         G.Presenter.OnControlButtonDown?.Invoke(direction);
     }
 
