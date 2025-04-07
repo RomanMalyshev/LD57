@@ -13,11 +13,11 @@ public class ControlPanelTest : MonoBehaviour
 
     [Space]
     [Header("Show, do not touch")]
-    [Range(0f, 1f)]
+    [Range(0f, 100f)]
     public float DetectionObjectPower;
 
     [Range(0, 100)] public int TelescopePower;
-    [Range(0f, 1f)] public float ResearchProgress;
+    [Range(0, 100)] public float ResearchProgress;
     public int TelescopeXRotation;
     public int TelescopeYRotation;
     public bool MaxXRotation;
@@ -72,24 +72,64 @@ public class ControlPanelTest : MonoBehaviour
             TelescopeXRotation = (int)Math.Ceiling(rotation.x);
             TelescopeYRotation = (int)Math.Ceiling(rotation.y);
         });
-        
+
         G.Presenter.TelescopeRotationXMax.Subscribe(state => { MaxXRotation = state; });
         G.Presenter.TelescopeRotationYMax.Subscribe(state => { MaxYRotation = state; });
-
-
+        G.Presenter.ObjectWasReserched.Subscribe(spaceObject =>
+        {
+            OnPanelText = $"Data was sent successfully, object {spaceObject.Name} was studied, my congratulations, move on to the next object!";
+        });
+        StartGame();
         //Out
     }
 
 
     public void Update()
     {
-        
-        if(G.Presenter.PlayerState.Value != GameStates.Exploring)return;
+        HandleZoom();
+        HandleFocus();
+        HadleInput();
+    }
+    
+    private void HandleFocus()
+    {
+        if (G.Presenter.PlayerState.Value != GameStates.ResearcObject)
+        {
+            if (Focus != 0f)
+            {
+                Focus = 0f;
+                G.Presenter.OnFocusChange.Value = Focus;
+            }
+        }
+        else
+        {
+            G.Presenter.OnFocusChange.Value = Focus;
+        }
+    }
+
+    private void HandleZoom()
+    {
+        if (G.Presenter.PlayerState.Value != GameStates.ResearcObject)
+        {
+            if (Zoom != 0f)
+            {
+                Zoom = 0f;
+                G.Presenter.OnZoom?.Invoke(Zoom);
+            }
+        }
+        else
+        {
+            G.Presenter.OnZoom?.Invoke(Zoom);
+        }
+    }
+
+    private static void HadleInput()
+    {
+        if (G.Presenter.PlayerState.Value != GameStates.Exploring) return;
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-           var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-           G.Presenter.OnMove?.Invoke(direction);
+            var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            G.Presenter.OnMove?.Invoke(direction);
         }
-        
     }
 }

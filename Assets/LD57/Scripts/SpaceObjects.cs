@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Globals;
 
@@ -5,7 +7,7 @@ public class SpaceObjects : MonoBehaviour
 {
     [SerializeField] private CameraDetector _detector;
     private InSpaceObject[] _spaceObjects;
-
+   
     private Vector3 _scaleVelocity;
     [SerializeField] private float _scaleSmoothTime = 3f;
     [SerializeField] private float _minScale = 0.5f;
@@ -16,41 +18,63 @@ public class SpaceObjects : MonoBehaviour
     private Vector3 _targetScale;
     public bool IsZoomSmoothing { get; private set; }
     private InSpaceObject _detectedObject;
+
     public void Init()
     {
         _spaceObjects = GetComponentsInChildren<InSpaceObject>();
 
         G.Presenter.OnZoom.Subscribe(HandleZoomInput);
+        G.Presenter.OnFocusChange.Subscribe(focus =>
+        {
+            if (_detectedObject == null) return;
+            _detectedObject.SetFocus(focus);
+        });
 
         G.Presenter.DetectedObject.Subscribe(spaceObject =>
         {
+            if (spaceObject == null) return;
             _detectedObject = spaceObject;
             IsZoomSmoothing = false;
-            if(spaceObject == null)return;
 
-            _currentScale =  _detectedObject.Sprite.transform.localScale;
+            _currentScale = _detectedObject.Sprite.transform.localScale;
+            _targetScale = _currentScale;
+            Debug.Log(_targetScale);
         });
     }
 
     private void HandleZoomInput(float zoom)
     {
         if (_detectedObject == null) return;
-        
-        var spaceObject = _detector.CurrentlyDetectedObject;
-        float targetScaleValue = Rom.MathHelper.Map(zoom, 0f, 1f, spaceObject._defaultScale, spaceObject._maxScale);
+        _detectedObject.SetZoom(zoom);
+        float targetScaleValue = Rom.MathHelper.Map(zoom, 0f, 1f, _detectedObject._defaultScale, _detectedObject._maxScale);
         _targetScale = Vector3.one * targetScaleValue;
-        Debug.Log(_targetScale);
     }
 
     private void Update()
     {
-        if (!G.Presenter.ResearchState.Value || _detectedObject == null) return;
-
+        if (_detectedObject == null) return;
         _currentScale = Vector3.SmoothDamp(_currentScale, _targetScale, ref _scaleVelocity, _scaleSmoothTime);
-   
-        _detector.CurrentlyDetectedObject.Sprite.transform.localScale = _currentScale;
-        bool scaleSettled = Vector3.Distance(_currentScale, _targetScale) < _stopThreshold;
 
+        _detectedObject.Sprite.transform.localScale = _currentScale;
+        bool scaleSettled = Vector3.Distance(_currentScale, _targetScale) < _stopThreshold;
+        
         IsZoomSmoothing = !scaleSettled;
+        CalculateObjectProgress();
+    }
+
+    private void CalculateObjectProgress()
+    {
+        var focusComponent =
+                G.Presenter.OnFocusChange.Value > _detectedObject.TargetFocus ? 
+                   (1f- (G.Presenter.OnFocusChange.Value -  _detectedObject.TargetFocus) / _detectedObject.TargetFocus ):
+                    G.Presenter.OnFocusChange.Value / _detectedObject.TargetFocus ;
+      
+        var zoomComponent =
+            _currentScale.x > _detectedObject.TargetZoom ? 
+                (1f - (_currentScale.x -  _detectedObject.TargetZoom) / _detectedObject.TargetZoom ):
+                _currentScale.x / _detectedObject.TargetZoom;
+        
+         G.Presenter.ResearchProgress.Value =
+            (focusComponent + zoomComponent)/2 * 100 ;
     }
 }

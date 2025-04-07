@@ -19,10 +19,8 @@ public class Presenter
     public SubscribableAction<float> OnGameVolumeChange = new();
     public SubscribableAction<float> OnFrequencyChenge = new();
     public SubscribableAction<float> OnLocation = new();
-    public SubscribableAction<bool> OnReaserchIsCompite = new();
-    public SubscribableAction OnSendReserchData = new();
 
-    public SubscribableField<bool> ResearchState = new();
+    
     
     //Gameplay
     public SubscribableField<GameStates> PlayerState = new(GameStates.EnterGame);
@@ -49,7 +47,5 @@ public class Presenter
     public SubscribableAction<Vector2> OnControlButtonDown = new();
     public SubscribableAction OnControlButtonUp = new();
     public SubscribableAction<FiltersType> OnFilterButtonClick = new();
-    public SubscribableAction<bool> OnTargetButtonDown = new();
-    
     
 }

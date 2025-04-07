@@ -33,6 +33,26 @@ public class CameraDetector : MonoBehaviour
     public void Update()
     {
         PerformDetection();
+        if (CurrentlyDetectedObject == null)
+        {
+            G.Presenter.DetectedObjectPower.Value = 0;
+        }
+        else
+        {
+            Vector3 camPos = TargetCamera.transform.position;
+            Vector3 camForward = TargetCamera.transform.forward;
+            Vector3 objPos = CurrentlyDetectedObject.transform.position;
+
+            // Calculate the perpendicular distance from object center to the camera ray
+            Vector3 camToObj = objPos - camPos;
+            Vector3 projection = Vector3.Project(camToObj, camForward);
+            Vector3 closestPointOnRay = camPos + projection;
+            float perpDistance = Vector3.Distance(objPos, closestPointOnRay);
+            
+            var normalizedValue = 1.0f - Mathf.Clamp01(perpDistance/7.6f);//sphere collider radius 
+            // Scale to 0-100 range
+            G.Presenter.DetectedObjectPower.Value = normalizedValue * 100.0f;
+        }
     }
 
     private void PerformDetection()
@@ -50,14 +70,14 @@ public class CameraDetector : MonoBehaviour
             {
                 IsDetectingTarget = true;
 
-                if (hit.transform.TryGetComponent<InSpaceObject>(out InSpaceObject spaceObject))
+                if (hit.transform.TryGetComponent<InSpaceObject>(out InSpaceObject spaceObject) && !spaceObject.Reserched)
                 {
-                    G.Presenter.DetectedObject.Value = spaceObject;
                     CurrentlyDetectedObject = spaceObject;
                 }
 
                 if (!previouslyDetecting || previousObject != CurrentlyDetectedObject)
                 {
+                    G.Presenter.DetectedObject.Value = spaceObject;
                     Debug.Log($"Detected Target '{_targetTag}': {hit.collider.name}", this);
                 }
             }
