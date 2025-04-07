@@ -7,7 +7,8 @@ public class RotationHandle : MonoBehaviour
     [SerializeField] private float maxAngle = 45f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private RotationHandleType _rotationHandleType;
-   
+
+    [SerializeField] private Camera Camera;
     private float currentAngle = 0f;
 
     public void Init()
@@ -27,13 +28,13 @@ public class RotationHandle : MonoBehaviour
                 currentAngle -= mouseWheelInput * rotationSpeed;
                 currentAngle = Mathf.Clamp(currentAngle, minAngle, maxAngle);
                 transform.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
-
+                
                 float normalizedValue = Mathf.InverseLerp(minAngle, maxAngle, currentAngle);
-
+                Debug.Log(normalizedValue +  " - Normilized value");
                 switch (_rotationHandleType)
                 {
                     case RotationHandleType.Focus:
-                        G.Presenter.OnFocusChange?.Invoke(normalizedValue);
+                        G.Presenter.OnFocusChange.Value = normalizedValue;
                         break;
                     case RotationHandleType.Zoom:
                         G.Presenter.OnZoom?.Invoke(normalizedValue);
@@ -51,7 +52,8 @@ public class RotationHandle : MonoBehaviour
 
     bool IsMouseOverHandle()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Camera == null) return false;
+        Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))

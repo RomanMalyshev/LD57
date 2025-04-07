@@ -26,6 +26,7 @@ public class SpaceObjects : MonoBehaviour
         G.Presenter.OnZoom.Subscribe(HandleZoomInput);
         G.Presenter.OnFocusChange.Subscribe(focus =>
         {
+            Debug.Log(focus + " focus");
             if (_detectedObject == null) return;
             _detectedObject.SetFocus(focus);
         });
@@ -68,7 +69,6 @@ public class SpaceObjects : MonoBehaviour
                 G.Presenter.OnFocusChange.Value > _detectedObject.TargetFocus ? 
                    (1f- (G.Presenter.OnFocusChange.Value -  _detectedObject.TargetFocus) / _detectedObject.TargetFocus ):
                     G.Presenter.OnFocusChange.Value / _detectedObject.TargetFocus ;
-      
         var zoomComponent =
             _currentScale.x > _detectedObject.TargetZoom ? 
                 (1f - (_currentScale.x -  _detectedObject.TargetZoom) / _detectedObject.TargetZoom ):

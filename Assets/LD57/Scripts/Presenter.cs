@@ -7,15 +7,17 @@ public class Presenter
 {
     public SubscribableAction<Vector2> OnMove = new();
     public SubscribableField<float> OnFocusChange = new();
+    
     public SubscribableField<float> OnZoom = new();
     public SubscribableAction<float> OnZoomSet = new();
+    public SubscribableAction<float> OnFocusSet = new();
+    
     public SubscribableAction<Enum, bool> OnFilterSet = new();
     public SubscribableAction<bool> OnEndOfReserchButtonClicked = new();
     public SubscribableAction<bool> OnReserchIsDone = new();
     public SubscribableAction<string> OnInfoPanelTextChange = new();
     public SubscribableAction<Vector2> OnTargetAcquisition = new();
     public SubscribableAction<Vector2> OnTargetAreaEnter = new();
-    public SubscribableAction<int> OnGameStarted = new();
     public SubscribableAction<float> OnGameVolumeChange = new();
     public SubscribableAction<float> OnFrequencyChenge = new();
     public SubscribableAction<float> OnLocation = new();

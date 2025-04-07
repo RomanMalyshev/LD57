@@ -1,18 +1,48 @@
+using System.Collections;
 using LD57.Scripts;
 using UnityEngine;
 using static Globals;
 
 public class Logic : MonoBehaviour
 {
+    public float focusReturnDuration = 0.7f; // Duration to return focus and zoom to zero
+
+    private IEnumerator ReturnFocus()
+    {
+        float startTime = Time.time;
+        float elapsedTime = 0f;
+
+        float initialZoom = G.Presenter.OnZoom.Value;
+        float initialFocus = G.Presenter.OnFocusChange.Value;
+
+        while (elapsedTime < focusReturnDuration)
+        {
+            elapsedTime = Time.time - startTime;
+            float t = Mathf.Clamp01(elapsedTime / focusReturnDuration); // Interpolation factor
+
+            G.Presenter.OnZoom.Value = Mathf.Lerp(initialZoom, 0f, t);
+            G.Presenter.OnFocusChange.Value = Mathf.Lerp(initialFocus, 0f, t);
+            G.Presenter.OnFocusSet?.Invoke(G.Presenter.OnFocusChange.Value);
+            G.Presenter.OnZoomSet?.Invoke(G.Presenter.OnZoom.Value);
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure values are exactly zero at the end
+        G.Presenter.OnZoom.Value = 0f;
+        G.Presenter.OnFocusChange.Value = 0f;
+    }
+
     public void Init()
     {
         G.Presenter.PlayerState.Value = GameStates.EnterGame;
 
-
         G.Presenter.OnStartGame.Subscribe(() =>
         {
             if (G.Presenter.PlayerState.Value == GameStates.EnterGame)
+            {
+                StartCoroutine(ReturnFocus());
                 G.Presenter.PlayerState.Value = GameStates.Exploring;
+            }
             else
                 Debug.LogWarning("Trying to start, from wrong state");
         });
@@ -32,7 +62,7 @@ public class Logic : MonoBehaviour
             {
                 if (G.Presenter.ResearchProgress.Value > GamePreferences.MIN_COMPLET_RESERCH)
                 {
-                    G.Presenter.DetectedObject.Value.SetResearchedState(true); 
+                    G.Presenter.DetectedObject.Value.SetResearchedState(true);
                     G.Presenter.ObjectWasReserched?.Invoke(G.Presenter.DetectedObject.Value);
                     G.Presenter.PlayerState.Value = GameStates.Exploring;
                 }
@@ -40,7 +70,6 @@ public class Logic : MonoBehaviour
                 {
                     Debug.LogWarning("Data can't be sent not enough progress");
                 }
-                
             }
             else
                 Debug.LogWarning("Trying to start, from wrong state");
@@ -61,7 +90,7 @@ public class Logic : MonoBehaviour
             {
                 G.Presenter.TelescopeRotationXMax.Value = true;
             }
-            
+
             if (rotation.x <= GamePreferences.MIN_PITCH + 1f &&
                 !G.Presenter.TelescopeRotationXMax.Value)
             {
@@ -86,7 +115,7 @@ public class Logic : MonoBehaviour
             {
                 G.Presenter.TelescopeRotationYMax.Value = true;
             }
-            
+
             if (rotation.y > GamePreferences.MIN_YOW + 1f &&
                 rotation.y < GamePreferences.MAX_YOW - 1f &&
                 G.Presenter.TelescopeRotationYMax.Value)

@@ -861,7 +861,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099144054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbad1d6cf5c711b4883aab2106e8e92e, type: 3}
   m_Name: 
@@ -1212,6 +1212,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 697404372857614043, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697404372857614043, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: TargetCamera
       value: 
       objectReference: {fileID: 330585545}
@@ -1219,6 +1223,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 917920603756507390, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 917920603756507390, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: CameraRoot
       value: 
@@ -1247,6 +1255,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 2046919120953826494, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2046919120953826494, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: CameraRoot
       value: 
@@ -1319,6 +1331,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 5054701558671172036, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5054701558671172036, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: MoveActiveThreshold
       value: 0.5
@@ -1445,7 +1461,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1972720510}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27417fa6045113e4fa27ca5494c2929b, type: 3}
   m_Name: 

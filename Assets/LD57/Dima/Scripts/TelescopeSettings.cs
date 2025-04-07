@@ -26,7 +26,6 @@ public class TelescopeSettings : MonoBehaviour
     {
         _zoomSlider.Init();
         _focus.Init();
-        _endReaserchButton.Init();
         G.Presenter.OnFilterButtonClick.Subscribe(SetFilters);
         G.Presenter.OnLocation.Subscribe(LocatorAnimation);
         G.Presenter.PlayerState.Subscribe(SetState);

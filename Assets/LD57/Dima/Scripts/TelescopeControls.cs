@@ -14,7 +14,7 @@ public class TelescopeControls : MonoBehaviour
     private GameStates _gamestate;
     public void Init()
     {
-        _targetButton.Init();
+        
         
         G.Presenter.OnTargetAreaEnter.Subscribe(TargetPositionSet);
         G.Presenter.OnControlButtonDown.Subscribe(ControlButtonDown);
@@ -25,6 +25,7 @@ public class TelescopeControls : MonoBehaviour
 
     private void Update()
     {
+        return;
         if (_gamestate == GameStates.Exploring)
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
