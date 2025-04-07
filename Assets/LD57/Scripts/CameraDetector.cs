@@ -33,7 +33,7 @@ public class CameraDetector : MonoBehaviour
     public void Update()
     {
         PerformDetection();
-        if (CurrentlyDetectedObject == null)
+        if (CurrentlyDetectedObject == null || CurrentlyDetectedObject.Reserched)
         {
             G.Presenter.DetectedObjectPower.Value = 0;
         }

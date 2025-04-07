@@ -17,6 +17,10 @@ public class ProgressBar : MonoBehaviour
 
     private void SetProgress(float progress)
     {
+        if (progress < 0)
+        {
+            progress = 0;
+        }
         
        for (int i = 0; i <Mathf.CeilToInt(progress/10); i++)
        {

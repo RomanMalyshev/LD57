@@ -65,6 +65,8 @@ public class Logic : MonoBehaviour
                     G.Presenter.DetectedObject.Value.SetResearchedState(true);
                     G.Presenter.ObjectWasReserched?.Invoke(G.Presenter.DetectedObject.Value);
                     G.Presenter.PlayerState.Value = GameStates.Exploring;
+                    G.Presenter.DetectedObjectPower.Value = 0;
+                    StartCoroutine(ReturnFocus());
                 }
                 else
                 {
