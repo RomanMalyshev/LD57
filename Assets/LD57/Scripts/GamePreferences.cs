@@ -9,5 +9,7 @@
         public const float MIN_YOW = -50f;
         public const float MAX_FOV = -30f;
         public const float MIN_FOV = -30f;
+
+        public const float MIN_COMPLET_RESERCH = 95f;
     }
 }

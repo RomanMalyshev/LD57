@@ -67,7 +67,7 @@ public class CameraMovementController : MonoBehaviour
 
         G.Presenter.PlayerState.Subscribe(state =>
         {
-            if (state == GameStates.Researching)
+            if (state == GameStates.ResearcObject)
             {
                 if (G.Presenter.DetectedObject.Value != null)
                 {

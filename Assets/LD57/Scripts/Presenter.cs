@@ -6,8 +6,8 @@ using Utils;
 public class Presenter
 {
     public SubscribableAction<Vector2> OnMove = new();
-    public SubscribableAction<float> OnFocusChange = new();
-    public SubscribableAction<float> OnZoom = new();
+    public SubscribableField<float> OnFocusChange = new();
+    public SubscribableField<float> OnZoom = new();
     public SubscribableAction<Enum, bool> OnFilterSet = new();
     public SubscribableAction<bool> OnEndOfReserchButtonClicked = new();
     public SubscribableAction<bool> OnReserchIsDone = new();
@@ -37,6 +37,7 @@ public class Presenter
 
     public SubscribableField<InSpaceObject> DetectedObject = new();
     
+    public SubscribableAction<InSpaceObject> ObjectWasReserched = new();
     //Settings
     public SubscribableAction OnStartGame = new();
     public SubscribableAction OnEndGame = new();

@@ -27,7 +27,9 @@ Material:
   m_ValidKeywords:
   - BLURISHD_ON
   - BLUR_ON
-  - ROTATEUV_ON
+  - FISHEYE_ON
+  - GLOW_ON
+  - PIXELATE_ON
   - ROUNDWAVEUV_ON
   - SHAKEUV_ON
   m_InvalidKeywords:
@@ -192,16 +194,16 @@ Material:
     - _DistortTexYSpeed: 5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EditorDrawers: 6
+    - _EditorDrawers: 7
     - _EnvironmentReflections: 1
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
     - _FadeBurnTransition: 0.01
     - _FadeBurnWidth: 0
-    - _FishEyeUvAmount: 0.114
-    - _FlickerAlpha: 0
-    - _FlickerFreq: 0.2
-    - _FlickerPercent: 0.05
+    - _FishEyeUvAmount: 0.102
+    - _FlickerAlpha: 0.511
+    - _FlickerFreq: 3.54
+    - _FlickerPercent: 0.215
     - _GhostBlend: 1
     - _GhostColorBoost: 1
     - _GhostTransparency: 0
@@ -210,8 +212,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Glow: 10
-    - _GlowGlobal: 1
+    - _Glow: 12
+    - _GlowGlobal: 12
     - _GradBlend: 1
     - _GradBoostX: 1.2
     - _GradBoostY: 1.2
@@ -245,7 +247,7 @@ Material:
     - _Metallic: 0
     - _MinXUV: 0
     - _MinYUV: 0
-    - _MotionBlurAngle: 0.1
+    - _MotionBlurAngle: -1
     - _MotionBlurDist: 1.25
     - _MyDstMode: 10
     - _MySrcMode: 5
@@ -255,7 +257,7 @@ Material:
     - _OffsetUvY: 0
     - _OnlyInnerOutline: 0
     - _OnlyOutline: 0
-    - _OutlineAlpha: 1
+    - _OutlineAlpha: 0
     - _OutlineDistortAmount: 0.5
     - _OutlineDistortTexXSpeed: 5
     - _OutlineDistortTexYSpeed: 5
@@ -270,7 +272,7 @@ Material:
     - _OverlayTextureScrollYSpeed: 0.25
     - _Parallax: 0.005
     - _PinchUvAmount: 0.493
-    - _PixelateSize: 166
+    - _PixelateSize: 20
     - _PosterizeGamma: 0.75
     - _PosterizeNumColors: 8
     - _PosterizeOutline: 0
@@ -281,7 +283,7 @@ Material:
     - _RandomSeed: 0
     - _ReceiveShadows: 1
     - _RectSize: 1
-    - _RotateUvAmount: 0
+    - _RotateUvAmount: 0.69
     - _RoundWaveSpeed: 0.2
     - _RoundWaveStrength: 0.126
     - _ShadowAlpha: 0.5
@@ -306,9 +308,9 @@ Material:
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
     - _TwistUvRadius: 0.75
-    - _WarpScale: 0.5
-    - _WarpSpeed: 8
-    - _WarpStrength: 0.025
+    - _WarpScale: 0.19
+    - _WarpSpeed: 1
+    - _WarpStrength: 0.0065
     - _WaveAmount: 7
     - _WaveSpeed: 10
     - _WaveStrength: 7.5

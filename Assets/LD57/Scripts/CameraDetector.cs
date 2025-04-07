@@ -70,14 +70,14 @@ public class CameraDetector : MonoBehaviour
             {
                 IsDetectingTarget = true;
 
-                if (hit.transform.TryGetComponent<InSpaceObject>(out InSpaceObject spaceObject))
+                if (hit.transform.TryGetComponent<InSpaceObject>(out InSpaceObject spaceObject) && !spaceObject.Reserched)
                 {
-                    G.Presenter.DetectedObject.Value = spaceObject;
                     CurrentlyDetectedObject = spaceObject;
                 }
 
                 if (!previouslyDetecting || previousObject != CurrentlyDetectedObject)
                 {
+                    G.Presenter.DetectedObject.Value = spaceObject;
                     Debug.Log($"Detected Target '{_targetTag}': {hit.collider.name}", this);
                 }
             }

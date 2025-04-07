@@ -21,15 +21,27 @@ public class Logic : MonoBehaviour
         {
             if (G.Presenter.PlayerState.Value == GameStates.Exploring &&
                 G.Presenter.DetectedObject.Value != null)
-                G.Presenter.PlayerState.Value = GameStates.Researching;
+                G.Presenter.PlayerState.Value = GameStates.ResearcObject;
             else
                 Debug.LogWarning("Trying to start, from wrong state");
         });
 
         G.Presenter.OnSendData.Subscribe(() =>
         {
-            if (G.Presenter.PlayerState.Value == GameStates.Researching)
-                G.Presenter.PlayerState.Value = GameStates.Exploring;
+            if (G.Presenter.PlayerState.Value == GameStates.ResearcObject)
+            {
+                if (G.Presenter.ResearchProgress.Value > GamePreferences.MIN_COMPLET_RESERCH)
+                {
+                    G.Presenter.DetectedObject.Value.SetResearchedState(true); 
+                    G.Presenter.ObjectWasReserched?.Invoke(G.Presenter.DetectedObject.Value);
+                    G.Presenter.PlayerState.Value = GameStates.Exploring;
+                }
+                else
+                {
+                    Debug.LogWarning("Data can't be sent not enough progress");
+                }
+                
+            }
             else
                 Debug.LogWarning("Trying to start, from wrong state");
         });
@@ -89,7 +101,7 @@ public enum GameStates
 {
     EnterGame,
     Exploring,
-    Researching,
+    ResearcObject,
     Prize,
     EndGame
 }

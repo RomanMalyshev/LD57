@@ -17,7 +17,7 @@ public class ControlPanelTest : MonoBehaviour
     public float DetectionObjectPower;
 
     [Range(0, 100)] public int TelescopePower;
-    [Range(0f, 1f)] public float ResearchProgress;
+    [Range(0, 100)] public float ResearchProgress;
     public int TelescopeXRotation;
     public int TelescopeYRotation;
     public bool MaxXRotation;
@@ -75,7 +75,10 @@ public class ControlPanelTest : MonoBehaviour
 
         G.Presenter.TelescopeRotationXMax.Subscribe(state => { MaxXRotation = state; });
         G.Presenter.TelescopeRotationYMax.Subscribe(state => { MaxYRotation = state; });
-
+        G.Presenter.ObjectWasReserched.Subscribe(spaceObject =>
+        {
+            OnPanelText = $"Data was sent successfully, object {spaceObject.Name} was studied, my congratulations, move on to the next object!";
+        });
         StartGame();
         //Out
     }
@@ -90,23 +93,23 @@ public class ControlPanelTest : MonoBehaviour
     
     private void HandleFocus()
     {
-        if (G.Presenter.PlayerState.Value != GameStates.Researching)
+        if (G.Presenter.PlayerState.Value != GameStates.ResearcObject)
         {
             if (Focus != 0f)
             {
                 Focus = 0f;
-                G.Presenter.OnFocusChange?.Invoke(0f);
+                G.Presenter.OnFocusChange.Value = Focus;
             }
         }
         else
         {
-            G.Presenter.OnFocusChange?.Invoke(Focus);
+            G.Presenter.OnFocusChange.Value = Focus;
         }
     }
 
     private void HandleZoom()
     {
-        if (G.Presenter.PlayerState.Value != GameStates.Researching)
+        if (G.Presenter.PlayerState.Value != GameStates.ResearcObject)
         {
             if (Zoom != 0f)
             {

@@ -49,8 +49,14 @@ MonoBehaviour:
   Sprite: {fileID: 8195041696008543181}
   DistanceFromViewer: 0
   Exploreded: 0
+  Name: 
   _defaultScale: 0
   _maxScale: 0
+  ResearchProgress: 0
+  TargetFocus: 0
+  TargetZoom: 0
+  GlowColor: {r: 1, g: 1, b: 1, a: 1}
+  Reserched: 0
 --- !u!135 &7273967483221455793
 SphereCollider:
   m_ObjectHideFlags: 0

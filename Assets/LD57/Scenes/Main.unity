@@ -154,7 +154,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 47.9}
-  m_SizeDelta: {x: 8.998, y: 63.3628}
+  m_SizeDelta: {x: 4.8, y: 61.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130341172
 MonoBehaviour:
@@ -335,7 +335,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 56.5, y: -2}
-  m_SizeDelta: {x: 8.998, y: 63.3628}
+  m_SizeDelta: {x: 4.53, y: 63.3628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275471795
 MonoBehaviour:
@@ -1110,7 +1110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -55.2, y: -2.6}
-  m_SizeDelta: {x: 8.998, y: 63.3628}
+  m_SizeDelta: {x: 2.59, y: 63.3628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765032616
 MonoBehaviour:
@@ -1627,7 +1627,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -56.4}
-  m_SizeDelta: {x: 8.998, y: 63.3628}
+  m_SizeDelta: {x: 3.5, y: 63.3628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763093943
 MonoBehaviour:
@@ -1744,6 +1744,10 @@ PrefabInstance:
       propertyPath: CameraRoot
       value: 
       objectReference: {fileID: 1839007255}
+    - target: {fileID: 2046919120953826494, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: _rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2690126326900073283, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1784,6 +1788,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3177251082260821088, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: _maxScale
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177251082260821088, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetZoom
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177251082260821088, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetFocus
+      value: 0.811
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177251082260821088, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: ResearchProgress
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4582956158324509238, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1795,6 +1815,22 @@ PrefabInstance:
     - target: {fileID: 5565252133097239837, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151787699926885205, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: _maxScale
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151787699926885205, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetZoom
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151787699926885205, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetFocus
+      value: 0.659
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151787699926885205, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: ResearchProgress
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6431645488120119714, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_Mesh
@@ -1819,6 +1855,22 @@ PrefabInstance:
     - target: {fileID: 8491909438122546699, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_Name
       value: Space
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836915600245493638, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: _maxScale
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836915600245493638, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetZoom
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836915600245493638, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: TargetFocus
+      value: 0.398
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836915600245493638, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: ResearchProgress
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9213137864005039375, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
