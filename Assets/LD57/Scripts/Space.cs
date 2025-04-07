@@ -32,40 +32,6 @@ public class Space : MonoBehaviour
         
         _movementController.Init();
         _spaceObjects.Init();
-        G.Presenter.OnMove.Subscribe(_movementController.HandleMoveInput);
     }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if ( G.Presenter.ResearchState.Value )
-            {
-                if (_detector.CurrentlyDetectedObject == null)
-                {
-                    Debug.Log("Can't send data CurrentlyDetectedObject is null");
-                }
-                else
-                {
-                    G.Presenter.ResearchState.Value = false;
-                    Debug.Log("End Research, Data Sended");
-                }
-
-            }
-            else
-            {
-                if (_detector.CurrentlyDetectedObject == null)
-                {
-                    Debug.Log("Nothing do detect  CurrentlyDetectedObject is null");
-                }
-                else
-                {
-
-                    G.Presenter.ResearchState.Value = true;
-                    Debug.Log("Start Research");
-                }  
-                
-            }
-        }
-    }
+    
 }

@@ -19,10 +19,6 @@ public class Presenter
     public SubscribableAction<float> OnFrequencyChenge = new();
     public SubscribableAction<float> OnLocation = new();
 
-
-
-    public SubscribableField<bool> ResearchState = new();
-
     
     
     //Gameplay

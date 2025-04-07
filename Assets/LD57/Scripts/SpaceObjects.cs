@@ -44,11 +44,11 @@ public class SpaceObjects : MonoBehaviour
 
     private void Update()
     {
-        if (!G.Presenter.ResearchState.Value || _detectedObject == null) return;
+        if (G.Presenter.PlayerState.Value != GameStates.Researching || _detectedObject == null) return;
 
         _currentScale = Vector3.SmoothDamp(_currentScale, _targetScale, ref _scaleVelocity, _scaleSmoothTime);
    
-        _detector.CurrentlyDetectedObject.Sprite.transform.localScale = _currentScale;
+       // _detector.CurrentlyDetectedObject.Sprite.transform.localScale = _currentScale;
         bool scaleSettled = Vector3.Distance(_currentScale, _targetScale) < _stopThreshold;
 
         IsZoomSmoothing = !scaleSettled;

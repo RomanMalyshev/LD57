@@ -64,11 +64,24 @@ public class CameraMovementController : MonoBehaviour
         IsZoomSmoothing = false;
         
         G.Presenter.OnZoom.Subscribe(HandleZoomInput);
+        G.Presenter.OnMove.Subscribe(HandleMoveInput);
         
+        G.Presenter.PlayerState.Subscribe(state =>
+        {
+            if (state == GameStates.Researching)
+            {
+                if (G.Presenter.DetectedObject.Value != null)
+                {
+                    AimAtTarget(G.Presenter.DetectedObject.Value.transform.position);
+                }
+                else
+                    Debug.LogWarning("CANT AIM TO TARGET!");
+            }
+        });
     }
 
     // Called externally (e.g., by Space class) when move input is received
-    public void HandleMoveInput(Vector2 direction)
+    private void HandleMoveInput(Vector2 direction)
     {
         IsApplyingRotationInput = direction.magnitude > INPUT_ACTIVE_THRESHOLD;
 
@@ -79,9 +92,7 @@ public class CameraMovementController : MonoBehaviour
             _targetPitch = Rom.MathHelper.ClampAngle(_targetPitch, GamePreferences.MIN_PITCH, GamePreferences.MAX_PITCH);
             _targetYaw += direction.x * _rotationSpeed * deltaTimeMultiplier;
             _targetYaw = Rom.MathHelper.ClampAngle(_targetYaw, GamePreferences.MIN_YOW, GamePreferences.MAX_YOW);
-          
-            
-
+   
         }
     }
 
@@ -96,6 +107,42 @@ public class CameraMovementController : MonoBehaviour
             _targetFov = Rom.MathHelper.Map(zoom, 0f, 1f, _maxFov, _minFov); // Reversed mapping: 1 = min FOV (zoomed in)
             _targetFov = Mathf.Clamp(_targetFov, _minFov, _maxFov);
         }
+    }
+
+    /// <summary>
+    /// Calculates the required pitch and yaw to aim at a specific world position
+    /// and sets them as the target values for smooth interpolation.
+    /// </summary>
+    /// <param name="targetWorldPosition">The world coordinate to aim at.</param>
+    public void AimAtTarget(Vector3 targetWorldPosition)
+    {
+        Vector3 directionToTarget = targetWorldPosition - CameraRoot.position; // World direction from root
+
+        // Avoid issues when the target is too close or at the same position
+        if (directionToTarget.sqrMagnitude < 0.001f)
+        {
+            return;
+        }
+
+        // 1. Calculate target Yaw based on world direction (XZ plane)
+        _targetYaw = Mathf.Atan2(directionToTarget.x, directionToTarget.z) * Mathf.Rad2Deg;
+        _targetYaw = Rom.MathHelper.ClampAngle(_targetYaw, GamePreferences.MIN_YOW, GamePreferences.MAX_YOW);
+
+        // 2. Determine the rotation of the CameraRoot based *only* on the target yaw
+        Quaternion targetRootYawRotation = Quaternion.Euler(0f, _targetYaw, 0f);
+
+        // 3. Transform the world direction into the local space of the root *as if it were already yawed*
+        Vector3 localDirection = Quaternion.Inverse(targetRootYawRotation) * directionToTarget;
+
+        // 4. Calculate target Pitch based on the local direction's Y (up/down) and Z (forward)
+        // Atan2 calculates the angle needed to rotate around the local X-axis
+        _targetPitch = Mathf.Atan2(localDirection.y, localDirection.z) * Mathf.Rad2Deg;
+
+        // Clamp the calculated pitch angle
+        // Note: The negation for application happens in LateUpdate (Quaternion.Euler(-_currentPitch...))
+        _targetPitch = Rom.MathHelper.ClampAngle(_targetPitch, GamePreferences.MIN_PITCH, GamePreferences.MAX_PITCH);
+
+        // Setting these targets will automatically trigger the smoothing in LateUpdate
     }
 
     private void LateUpdate()
