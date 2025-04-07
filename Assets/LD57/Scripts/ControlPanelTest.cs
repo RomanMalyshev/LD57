@@ -13,7 +13,7 @@ public class ControlPanelTest : MonoBehaviour
 
     [Space]
     [Header("Show, do not touch")]
-    [Range(0f, 1f)]
+    [Range(0f, 100f)]
     public float DetectionObjectPower;
 
     [Range(0, 100)] public int TelescopePower;
@@ -72,7 +72,7 @@ public class ControlPanelTest : MonoBehaviour
             TelescopeXRotation = (int)Math.Ceiling(rotation.x);
             TelescopeYRotation = (int)Math.Ceiling(rotation.y);
         });
-        
+
         G.Presenter.TelescopeRotationXMax.Subscribe(state => { MaxXRotation = state; });
         G.Presenter.TelescopeRotationYMax.Subscribe(state => { MaxYRotation = state; });
 
@@ -83,13 +83,11 @@ public class ControlPanelTest : MonoBehaviour
 
     public void Update()
     {
-        
-        if(G.Presenter.PlayerState.Value != GameStates.Exploring)return;
+        if (G.Presenter.PlayerState.Value != GameStates.Exploring) return;
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-           var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-           G.Presenter.OnMove?.Invoke(direction);
+            var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            G.Presenter.OnMove?.Invoke(direction);
         }
-        
     }
 }
