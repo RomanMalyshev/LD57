@@ -73,8 +73,8 @@ namespace LD57.Scripts
         {
             if (_sliderType == SliderType.Zoom)
             {
-                float tragetPositionX = (value - _minValue) / (_maxValue - _minValue) * (_maxX - _minX) + _minX;
-                transform.position = new Vector3(tragetPositionX, transform.position.y, transform.position.z);
+                float targetPositionX = (value - _minValue) / (_maxValue - _minValue) * (_maxX - _minX) + _minX;
+                transform.localPosition = new Vector3(targetPositionX, transform.localPosition.y, transform.localPosition.z);
             }
         }
     }

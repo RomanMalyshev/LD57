@@ -15,6 +15,7 @@ public class RotationHandle : MonoBehaviour
     {
         currentAngle = minAngle;
         transform.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
+        G.Presenter.OnZoomSet.Subscribe(SetZoom);
     }
 
     void Update()
@@ -61,6 +62,15 @@ public class RotationHandle : MonoBehaviour
             return hit.transform == transform;
         }
         return false;
+    }
+
+    private void SetZoom(float value)
+    {
+        if (_rotationHandleType == RotationHandleType.Zoom)
+        {
+            currentAngle = Mathf.Lerp(minAngle, maxAngle, value);
+            transform.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
+        }
     }
 }
 
