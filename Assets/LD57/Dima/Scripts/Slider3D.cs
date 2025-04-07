@@ -37,7 +37,7 @@ namespace LD57.Scripts
 
         public void OnMouseDrag()
         {
-            if (_gamestate == GameStates.Researching)
+            if (_gamestate == GameStates.ResearcObject)
             {
                 Vector3 mouseScreenPos = Input.mousePosition;
                 mouseScreenPos.z = initialZ;

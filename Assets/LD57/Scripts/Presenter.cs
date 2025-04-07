@@ -6,8 +6,8 @@ using Utils;
 public class Presenter
 {
     public SubscribableAction<Vector2> OnMove = new();
-    public SubscribableAction<float> OnFocusChange = new();
-    public SubscribableAction<float> OnZoom = new();
+    public SubscribableField<float> OnFocusChange = new();
+    public SubscribableField<float> OnZoom = new();
     public SubscribableAction<float> OnZoomSet = new();
     public SubscribableAction<Enum, bool> OnFilterSet = new();
     public SubscribableAction<bool> OnEndOfReserchButtonClicked = new();
@@ -37,6 +37,7 @@ public class Presenter
     public SubscribableField<bool> TelescopeRotationYMax = new();
 
     public SubscribableField<InSpaceObject> DetectedObject = new();
+    public SubscribableField<InSpaceObject> ObjectWasReserched = new();
     
     //Settings
     public SubscribableAction OnStartGame = new();
@@ -47,5 +48,6 @@ public class Presenter
     public SubscribableAction<Vector2> OnControlButtonDown = new();
     public SubscribableAction OnControlButtonUp = new();
     public SubscribableAction<FiltersType> OnFilterButtonClick = new();
+    public SubscribableAction<bool> OnTargetButtonDown = new();
     
 }

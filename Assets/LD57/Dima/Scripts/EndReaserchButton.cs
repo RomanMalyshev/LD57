@@ -16,7 +16,7 @@ public class EndReaserchButton : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (_gamestate == GameStates.Researching)
-            G.Presenter.OnSendReserchData?.Invoke();
+        if (_gamestate == GameStates.ResearcObject)
+            G.Presenter.OnSendData?.Invoke();
     }
 }

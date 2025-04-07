@@ -33,7 +33,7 @@ public class TelescopeSettings : MonoBehaviour
     }
     void SetFilters(FiltersType filtersType)
     {
-        if (_gamestate == GameStates.Researching)
+        if (_gamestate == GameStates.ResearcObject)
         {
             switch (filtersType)
             {
