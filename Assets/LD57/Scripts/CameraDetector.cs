@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static Globals;
 
 public class CameraDetector : MonoBehaviour
 {
@@ -14,13 +15,12 @@ public class CameraDetector : MonoBehaviour
     [SerializeField] private string _targetTag = "SpaceObject"; // Tag to detect
 
     // Public properties to access detection results
-    public Transform CurrentlyDetectedObject { get; private set; }
+    public InSpaceObject CurrentlyDetectedObject { get; private set; }
     public bool IsDetectingTarget { get; private set; }
-    public Action<SpaceObjects> ObjectDetected;
     public RaycastHit LastHitInfo { get; private set; }
 
     private bool _hasWarnedMissingCamera = false;
-    
+
     private void Awake()
     {
         if (TargetCamera == null)
@@ -34,14 +34,14 @@ public class CameraDetector : MonoBehaviour
     {
         PerformDetection();
     }
-    
-    public void PerformDetection()
+
+    private void PerformDetection()
     {
         Ray ray = new Ray(TargetCamera.transform.position, TargetCamera.transform.forward);
         RaycastHit hit;
 
         bool previouslyDetecting = IsDetectingTarget;
-        Transform previousObject = CurrentlyDetectedObject;
+        InSpaceObject previousObject = CurrentlyDetectedObject;
 
         if (Physics.Raycast(ray, out hit, _raycastLength, _raycastLayerMask))
         {
@@ -49,7 +49,13 @@ public class CameraDetector : MonoBehaviour
             if (!string.IsNullOrEmpty(_targetTag) && hit.collider.CompareTag(_targetTag))
             {
                 IsDetectingTarget = true;
-                CurrentlyDetectedObject = hit.transform;
+
+                if (hit.transform.TryGetComponent<InSpaceObject>(out InSpaceObject spaceObject))
+                {
+                    G.Presenter.DetectedObject.Value = spaceObject;
+                    CurrentlyDetectedObject = spaceObject;
+                }
+
                 if (!previouslyDetecting || previousObject != CurrentlyDetectedObject)
                 {
                     Debug.Log($"Detected Target '{_targetTag}': {hit.collider.name}", this);
@@ -60,20 +66,23 @@ public class CameraDetector : MonoBehaviour
                 // Hit something, but not the target tag (or tag is empty)
                 IsDetectingTarget = false;
                 CurrentlyDetectedObject = null;
+                G.Presenter.DetectedObject.Value = null;
             }
         }
-     //  else
-     //  {
-     //      // Hit nothing
-     //      IsDetectingTarget = false;
-     //      CurrentlyDetectedObject = null;
-     //      // Clear LastHitInfo if needed, depending on desired behavior when hitting nothing
-     //      // LastHitInfo = default; 
-     //  }//
-     //  if (previouslyDetecting && !IsDetectingTarget && previousObject != null)
-     //  {
-     //      Debug.Log($"Stopped detecting Target '{_targetTag}': {previousObject.name}", this);
-     //  }
+        else
+        {
+            // Hit nothing
+            IsDetectingTarget = false;
+            CurrentlyDetectedObject = null;
+            // Clear LastHitInfo if needed, depending on desired behavior when hitting nothing
+            // LastHitInfo = default; 
+            G.Presenter.DetectedObject.Value = null;
+        } //
+
+        if (previouslyDetecting && !IsDetectingTarget && previousObject != null)
+        {
+            Debug.Log($"Stopped detecting Target '{_targetTag}': {previousObject.name}", this);
+        }
     }
 
     // Draw Gizmos to visualize the detection ray
@@ -95,12 +104,6 @@ public class CameraDetector : MonoBehaviour
                 drawLength = LastHitInfo.distance;
             }
         }
-        // Optional: Add different color if hitting *something* but not the target
-        // else if (Physics.Raycast(ray, out RaycastHit anyHit, _raycastLength, _raycastLayerMask))
-        // {
-        //     gizmoColor = Color.yellow; // Hitting something else
-        //     drawLength = anyHit.distance;
-        // }
         else
         {
             gizmoColor = Color.red; // Hitting nothing or not detecting the target tag

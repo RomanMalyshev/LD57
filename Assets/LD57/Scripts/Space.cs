@@ -19,20 +19,17 @@ public class Space : MonoBehaviour
     private CameraAudioController _audioController;
     private CameraDetector _detector;
 
-    private void Awake()
+    public void Init()
     {
         _movementController = GetComponent<CameraMovementController>();
         _audioController = GetComponent<CameraAudioController>(); 
         _detector = GetComponent<CameraDetector>();
 
-        _movementController.Camera = this.Camera;
-        _movementController.CameraRoot = this.CameraRoot;
+        _movementController.Camera = Camera;
+        _movementController.CameraRoot = CameraRoot;
 
-        _detector.TargetCamera = this.Camera;
-    }
-
-    public void Init()
-    {
+        _detector.TargetCamera = Camera;
+        
         _movementController.Init();
         _spaceObjects.Init();
         G.Presenter.OnMove.Subscribe(_movementController.HandleMoveInput);
