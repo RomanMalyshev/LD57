@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1523623695068368310}
   - component: {fileID: 8275501272062284275}
   m_Layer: 0
-  m_Name: Starfield Dome
+  m_Name: Starfield Dome Up 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
-  color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  brightness: 1.35
-  mainTex: {fileID: 2800000, guid: 21e254ab4724da1429576c9e045ce231, type: 3}
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  brightness: 2
+  mainTex: {fileID: 2800000, guid: 3ffcce23571798443bd79b888ace3403, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -66,10 +66,10 @@ MonoBehaviour:
   stretchScale: 9.27
   stretchLimit: 10000
   model: {fileID: 4751725106776553923}
-  seed: 36
-  radius: 7.3
+  seed: 1424786060
+  radius: 10
   bias: 1
-  starCount: 426
+  starCount: 943
   starColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -100,11 +100,116 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.05
-  starRadiusBias: 4.32
+  starRadiusMin: 0.07
+  starRadiusMax: 0.1
+  starRadiusBias: 46.9
   starPulseSpeedMin: 0.291
   starPulseSpeedMax: 1
+--- !u!1 &327883964263563361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4202219229255571691}
+  - component: {fileID: 1149188534556089461}
+  m_Layer: 0
+  m_Name: Starfield Dome Down 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4202219229255571691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327883964263563361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2951928567166329723}
+  m_Father: {fileID: 5279252640831492510}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1149188534556089461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327883964263563361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  brightness: 4.7
+  mainTex: {fileID: 2800000, guid: 7dd114c33b20f2f43bcc672786324a1f, type: 3}
+  atlas:
+    layout: 0
+    layoutColumns: 1
+    layoutRows: 1
+    layoutRects:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+  clampSizeMin: 0
+  softness: 0
+  stretch: 0
+  stretchVector: {x: 0, y: 0, z: 0}
+  stretchScale: 9.27
+  stretchLimit: 10000
+  model: {fileID: 5038696643057224032}
+  seed: -223105170
+  radius: 10
+  bias: 1
+  starCount: 509
+  starColors:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  starRadiusMin: 0.12
+  starRadiusMax: 0.15
+  starRadiusBias: 4.65
+  starPulseSpeedMin: 0.146
+  starPulseSpeedMax: 0.449
 --- !u!1 &612691986715247629
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +562,7 @@ MonoBehaviour:
   parent: {fileID: 71189051163498413}
   cachedMeshFilter: {fileID: 5565252133097239837}
   cachedMeshRenderer: {fileID: 8415646353661674140}
---- !u!1 &2323006188994861557
+--- !u!1 &2096552885227889945
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,10 +570,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1115409817156082695}
-  - component: {fileID: 7901515994309079966}
-  - component: {fileID: 1271907934953844176}
-  - component: {fileID: 8831341858818209453}
+  - component: {fileID: 555705773936268731}
+  - component: {fileID: 6431645488120119714}
+  - component: {fileID: 8483830794972441385}
+  - component: {fileID: 8293131287537412326}
   m_Layer: 0
   m_Name: SgtStarfieldModel
   m_TagString: Untagged
@@ -476,36 +581,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1115409817156082695
+--- !u!4 &555705773936268731
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323006188994861557}
+  m_GameObject: {fileID: 2096552885227889945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 267372730481875064}
+  m_Father: {fileID: 5311632775118906427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7901515994309079966
+--- !u!33 &6431645488120119714
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323006188994861557}
+  m_GameObject: {fileID: 2096552885227889945}
   m_Mesh: {fileID: 0}
---- !u!23 &1271907934953844176
+--- !u!23 &8483830794972441385
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323006188994861557}
+  m_GameObject: {fileID: 2096552885227889945}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -544,21 +649,123 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8831341858818209453
+--- !u!114 &8293131287537412326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323006188994861557}
+  m_GameObject: {fileID: 2096552885227889945}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 8293881839367830290}
-  cachedMeshFilter: {fileID: 7901515994309079966}
-  cachedMeshRenderer: {fileID: 1271907934953844176}
+  parent: {fileID: 7222503706954836482}
+  cachedMeshFilter: {fileID: 6431645488120119714}
+  cachedMeshRenderer: {fileID: 8483830794972441385}
+--- !u!1 &2164956121276146805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2951928567166329723}
+  - component: {fileID: 1569683608407783276}
+  - component: {fileID: 8239472334816285796}
+  - component: {fileID: 5038696643057224032}
+  m_Layer: 0
+  m_Name: SgtStarfieldModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2951928567166329723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164956121276146805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4202219229255571691}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1569683608407783276
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164956121276146805}
+  m_Mesh: {fileID: 0}
+--- !u!23 &8239472334816285796
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164956121276146805}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5038696643057224032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164956121276146805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 1149188534556089461}
+  cachedMeshFilter: {fileID: 1569683608407783276}
+  cachedMeshRenderer: {fileID: 8239472334816285796}
 --- !u!1 &2361101433234351810
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +868,7 @@ MonoBehaviour:
   parent: {fileID: 7505778531015405850}
   cachedMeshFilter: {fileID: 6711973011562395124}
   cachedMeshRenderer: {fileID: 9213137864005039375}
---- !u!1 &2416057538274940793
+--- !u!1 &2696429702187275642
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -669,47 +876,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 267372730481875064}
-  - component: {fileID: 8293881839367830290}
+  - component: {fileID: 950497782832495229}
+  - component: {fileID: 7615933688432273311}
   m_Layer: 0
-  m_Name: Starfield Dome (4)
+  m_Name: Starfield Dome Down 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &267372730481875064
+--- !u!4 &950497782832495229
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2416057538274940793}
+  m_GameObject: {fileID: 2696429702187275642}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1115409817156082695}
+  - {fileID: 9109022227083570297}
   m_Father: {fileID: 5279252640831492510}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &8293881839367830290
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &7615933688432273311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2416057538274940793}
+  m_GameObject: {fileID: 2696429702187275642}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
   color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   brightness: 1.5
-  mainTex: {fileID: 2800000, guid: 4535ddc69c075cd478eb948c8b53c9c2, type: 3}
+  mainTex: {fileID: 2800000, guid: b47a31dc1ee8697428b5b234f90e9f5e, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -726,11 +933,11 @@ MonoBehaviour:
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
   stretchLimit: 10000
-  model: {fileID: 8831341858818209453}
-  seed: 79
-  radius: 7.3
+  model: {fileID: 486257203999500136}
+  seed: -1710111445
+  radius: 10
   bias: 1
-  starCount: 219
+  starCount: 446
   starColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -761,115 +968,10 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.63
-  starRadiusBias: 7.2
-  starPulseSpeedMin: 0.327
-  starPulseSpeedMax: 1
---- !u!1 &2560362754341856751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 278091431768118007}
-  - component: {fileID: 8040866814768313668}
-  m_Layer: 0
-  m_Name: Starfield Dome (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &278091431768118007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2560362754341856751}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.10105626, z: 0.99488074, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 200, z: 200}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 9203660012063683938}
-  m_Father: {fileID: 5279252640831492510}
-  m_LocalEulerAnglesHint: {x: 11.6, y: 0, z: 180}
---- !u!114 &8040866814768313668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2560362754341856751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
-  color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  brightness: 1.5
-  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
-  atlas:
-    layout: 0
-    layoutColumns: 1
-    layoutRows: 1
-    layoutRects:
-    - serializedVersion: 2
-      x: 0
-      y: 0
-      width: 1
-      height: 1
-  clampSizeMin: 0
-  softness: 0
-  stretch: 0
-  stretchVector: {x: 0, y: 0, z: 0}
-  stretchScale: 9.27
-  stretchLimit: 10000
-  model: {fileID: 5951114894455843888}
-  seed: 36
-  radius: 7.3
-  bias: 1
-  starCount: 219
-  starColors:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.05
-  starRadiusBias: 7.2
-  starPulseSpeedMin: 0.327
+  starRadiusMin: 0.08
+  starRadiusMax: 0.1
+  starRadiusBias: 4.65
+  starPulseSpeedMin: 0.291
   starPulseSpeedMax: 1
 --- !u!1 &3327312027933682182
 GameObject:
@@ -1019,6 +1121,108 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4076052437623000165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9109022227083570297}
+  - component: {fileID: 14944162826183332}
+  - component: {fileID: 4582956158324509238}
+  - component: {fileID: 486257203999500136}
+  m_Layer: 0
+  m_Name: SgtStarfieldModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9109022227083570297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076052437623000165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 950497782832495229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &14944162826183332
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076052437623000165}
+  m_Mesh: {fileID: 0}
+--- !u!23 &4582956158324509238
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076052437623000165}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &486257203999500136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076052437623000165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 7615933688432273311}
+  cachedMeshFilter: {fileID: 14944162826183332}
+  cachedMeshRenderer: {fileID: 4582956158324509238}
 --- !u!1 &5315759239097805894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,10 +1255,10 @@ Transform:
   - {fileID: 7140544009190477349}
   - {fileID: 1523623695068368310}
   - {fileID: 2279585944868606228}
-  - {fileID: 8789554321841327435}
-  - {fileID: 267372730481875064}
   - {fileID: 4268455048172867668}
-  - {fileID: 278091431768118007}
+  - {fileID: 5311632775118906427}
+  - {fileID: 4202219229255571691}
+  - {fileID: 950497782832495229}
   m_Father: {fileID: 2690126326900073283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5831782894962669970
@@ -1143,7 +1347,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6022281700982192297
+--- !u!1 &6574052424955207751
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1151,253 +1355,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8789554321841327435}
-  - component: {fileID: 7461058295715662101}
+  - component: {fileID: 5311632775118906427}
+  - component: {fileID: 7222503706954836482}
   m_Layer: 0
-  m_Name: Starfield Dome (1)
+  m_Name: Starfield Dome Down 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8789554321841327435
+--- !u!4 &5311632775118906427
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022281700982192297}
+  m_GameObject: {fileID: 6574052424955207751}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 4295512754832656848}
+  - {fileID: 555705773936268731}
   m_Father: {fileID: 5279252640831492510}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &7461058295715662101
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &7222503706954836482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022281700982192297}
+  m_GameObject: {fileID: 6574052424955207751}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
-  color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  brightness: 1.5
-  mainTex: {fileID: 2800000, guid: 4ee12ec80de2e9347bd86fe1712106cb, type: 3}
-  atlas:
-    layout: 0
-    layoutColumns: 1
-    layoutRows: 1
-    layoutRects:
-    - serializedVersion: 2
-      x: 0
-      y: 0
-      width: 1
-      height: 1
-  clampSizeMin: 0
-  softness: 0
-  stretch: 0
-  stretchVector: {x: 0, y: 0, z: 0}
-  stretchScale: 9.27
-  stretchLimit: 10000
-  model: {fileID: 7866219756438540627}
-  seed: 36
-  radius: 7.3
-  bias: 1
-  starCount: 219
-  starColors:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.05
-  starRadiusBias: 7.2
-  starPulseSpeedMin: 0.327
-  starPulseSpeedMax: 1
---- !u!1 &6354431630808551934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9203660012063683938}
-  - component: {fileID: 3982957085493784362}
-  - component: {fileID: 7832557421228135272}
-  - component: {fileID: 5951114894455843888}
-  m_Layer: 0
-  m_Name: SgtStarfieldModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9203660012063683938
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354431630808551934}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 278091431768118007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3982957085493784362
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354431630808551934}
-  m_Mesh: {fileID: 0}
---- !u!23 &7832557421228135272
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354431630808551934}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5951114894455843888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354431630808551934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 8040866814768313668}
-  cachedMeshFilter: {fileID: 3982957085493784362}
-  cachedMeshRenderer: {fileID: 7832557421228135272}
---- !u!1 &8360753566582412294
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2279585944868606228}
-  - component: {fileID: 71189051163498413}
-  m_Layer: 0
-  m_Name: Starfield Dome (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2279585944868606228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360753566582412294}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -99.6, z: 0}
-  m_LocalScale: {x: 16.8, y: 16.8, z: 16.8}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 6328610407945689802}
-  m_Father: {fileID: 5279252640831492510}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &71189051163498413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360753566582412294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
-  color: {r: 1, g: 0, b: 0, a: 1}
-  brightness: 11.24
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  brightness: 2
   mainTex: {fileID: 2800000, guid: 3ffcce23571798443bd79b888ace3403, type: 3}
   atlas:
     layout: 0
@@ -1415,11 +1412,11 @@ MonoBehaviour:
   stretchVector: {x: 0, y: 0, z: 0}
   stretchScale: 9.27
   stretchLimit: 10000
-  model: {fileID: 6449460320164255181}
-  seed: 36
-  radius: 7.3
+  model: {fileID: 8293131287537412326}
+  seed: 501504162
+  radius: 10
   bias: 1
-  starCount: 219
+  starCount: 943
   starColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1450,11 +1447,116 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.05
-  starRadiusBias: 4.32
+  starRadiusMin: 0.07
+  starRadiusMax: 0.1
+  starRadiusBias: 46.9
   starPulseSpeedMin: 0.291
   starPulseSpeedMax: 1
+--- !u!1 &8360753566582412294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2279585944868606228}
+  - component: {fileID: 71189051163498413}
+  m_Layer: 0
+  m_Name: Starfield Dome Up 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2279585944868606228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360753566582412294}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 6328610407945689802}
+  m_Father: {fileID: 5279252640831492510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71189051163498413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360753566582412294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  brightness: 4.7
+  mainTex: {fileID: 2800000, guid: 7dd114c33b20f2f43bcc672786324a1f, type: 3}
+  atlas:
+    layout: 0
+    layoutColumns: 1
+    layoutRows: 1
+    layoutRects:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+  clampSizeMin: 0
+  softness: 0
+  stretch: 0
+  stretchVector: {x: 0, y: 0, z: 0}
+  stretchScale: 9.27
+  stretchLimit: 10000
+  model: {fileID: 6449460320164255181}
+  seed: 667204084
+  radius: 10
+  bias: 1
+  starCount: 543
+  starColors:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  starRadiusMin: 0.12
+  starRadiusMax: 0.15
+  starRadiusBias: 4.65
+  starPulseSpeedMin: 0.146
+  starPulseSpeedMax: 0.449
 --- !u!1 &8406909573854000863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1568,7 @@ GameObject:
   - component: {fileID: 4268455048172867668}
   - component: {fileID: 7505778531015405850}
   m_Layer: 0
-  m_Name: Starfield Dome (2)
+  m_Name: Starfield Dome Up 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1500,10 +1602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6f49bb3d55da7409231ca76565f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 1be6c89abc6403d4f985ef806db3428b, type: 2}
+  sourceMaterial: {fileID: 2100000, guid: 27ed435876357754b82da91622026a26, type: 2}
   color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   brightness: 1.5
-  mainTex: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  mainTex: {fileID: 2800000, guid: b47a31dc1ee8697428b5b234f90e9f5e, type: 3}
   atlas:
     layout: 0
     layoutColumns: 1
@@ -1521,10 +1623,10 @@ MonoBehaviour:
   stretchScale: 9.27
   stretchLimit: 10000
   model: {fileID: 203407636821046096}
-  seed: 36
-  radius: 7.3
+  seed: -1337528278
+  radius: 10
   bias: 1
-  starCount: 219
+  starCount: 446
   starColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1555,9 +1657,9 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  starRadiusMin: 0.04
-  starRadiusMax: 0.05
-  starRadiusBias: 4.32
+  starRadiusMin: 0.08
+  starRadiusMax: 0.1
+  starRadiusBias: 4.65
   starPulseSpeedMin: 0.291
   starPulseSpeedMax: 1
 --- !u!1 &8491909438122546699
@@ -1628,10 +1730,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   CameraRoot: {fileID: 0}
-  _rotationSpeed: 500
-  _rotationSmoothTime: 0.7
-  _minPitch: -89
-  _maxPitch: 89
+  _rotationSpeed: 40
+  _rotationSmoothTime: 0.4
+  _zoomSmoothTime: 0.6
+  _minFov: 57
+  _maxFov: 60
   _stopThreshold: 0.5
 --- !u!114 &5054701558671172036
 MonoBehaviour:
@@ -1669,108 +1772,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   _targetTag: SpaceObject
---- !u!1 &8890286970109939351
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4295512754832656848}
-  - component: {fileID: 8776409870056136863}
-  - component: {fileID: 6737366316303058881}
-  - component: {fileID: 7866219756438540627}
-  m_Layer: 0
-  m_Name: SgtStarfieldModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4295512754832656848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890286970109939351}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8789554321841327435}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8776409870056136863
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890286970109939351}
-  m_Mesh: {fileID: 0}
---- !u!23 &6737366316303058881
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890286970109939351}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7866219756438540627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890286970109939351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 611df3cc591e511469579a189f64f2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 7461058295715662101}
-  cachedMeshFilter: {fileID: 8776409870056136863}
-  cachedMeshRenderer: {fileID: 6737366316303058881}
 --- !u!1 &9199792499972183404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detector: {fileID: 697404372857614043}
+  _scaleSmoothTime: 0.3
   _minScale: 0.5
   _maxScale: 2
 --- !u!1001 &611627420737806082
@@ -1829,6 +1831,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6581531071803593547}
     m_Modifications:
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _maxScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _defaultScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _targetScale.x
       value: 2
@@ -1916,6 +1926,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 6581531071803593547}
     m_Modifications:
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _maxScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _defaultScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _targetScale.x
       value: 2
       objectReference: {fileID: 0}
@@ -2001,6 +2019,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6581531071803593547}
     m_Modifications:
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _maxScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
+      propertyPath: _defaultScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _targetScale.x
       value: 2

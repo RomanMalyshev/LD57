@@ -76,12 +76,51 @@ public class ControlPanelTest : MonoBehaviour
         G.Presenter.TelescopeRotationXMax.Subscribe(state => { MaxXRotation = state; });
         G.Presenter.TelescopeRotationYMax.Subscribe(state => { MaxYRotation = state; });
 
-
+        StartGame();
         //Out
     }
 
 
     public void Update()
+    {
+        HandleZoom();
+        HandleFocus();
+        HadleInput();
+    }
+    
+    private void HandleFocus()
+    {
+        if (G.Presenter.PlayerState.Value != GameStates.Researching)
+        {
+            if (Focus != 0f)
+            {
+                Focus = 0f;
+                G.Presenter.OnFocusChange?.Invoke(0f);
+            }
+        }
+        else
+        {
+            G.Presenter.OnFocusChange?.Invoke(Focus);
+        }
+    }
+
+    private void HandleZoom()
+    {
+        if (G.Presenter.PlayerState.Value != GameStates.Researching)
+        {
+            if (Zoom != 0f)
+            {
+                Zoom = 0f;
+                G.Presenter.OnZoom?.Invoke(Zoom);
+            }
+        }
+        else
+        {
+            G.Presenter.OnZoom?.Invoke(Zoom);
+        }
+    }
+
+    private static void HadleInput()
     {
         if (G.Presenter.PlayerState.Value != GameStates.Exploring) return;
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)

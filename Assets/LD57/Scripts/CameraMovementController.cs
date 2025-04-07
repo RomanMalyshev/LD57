@@ -16,7 +16,7 @@ public class CameraMovementController : MonoBehaviour
     [SerializeField] private float _zoomSmoothTime = 0.1f;
     [SerializeField] private float _minFov = 55f;
     [SerializeField] private float _maxFov = 60f;
-   
+
     [SerializeField] private float _stopThreshold = 2f;
 
     // Target state
@@ -36,15 +36,14 @@ public class CameraMovementController : MonoBehaviour
 
     // State flags for external use (e.g., audio)
     public bool IsApplyingRotationInput { get; private set; }
-    public bool IsApplyingZoomInput { get; private set; } 
+    public bool IsApplyingZoomInput { get; private set; }
     public bool IsRotationSmoothing { get; private set; }
-    public bool IsZoomSmoothing { get; private set; } 
+    public bool IsZoomSmoothing { get; private set; }
 
-    private const float INPUT_ACTIVE_THRESHOLD = 0.01f; 
+    private const float INPUT_ACTIVE_THRESHOLD = 0.01f;
 
     public void Init()
     {
-
         // Initialize current rotation based on initial scene setup
         _currentPitch = Camera.transform.localEulerAngles.x;
         if (_currentPitch > 180) _currentPitch -= 360f; // Normalize pitch
@@ -62,10 +61,10 @@ public class CameraMovementController : MonoBehaviour
         IsApplyingZoomInput = false;
         IsRotationSmoothing = false;
         IsZoomSmoothing = false;
-        
+
         G.Presenter.OnZoom.Subscribe(HandleZoomInput);
         G.Presenter.OnMove.Subscribe(HandleMoveInput);
-        
+
         G.Presenter.PlayerState.Subscribe(state =>
         {
             if (state == GameStates.Researching)
@@ -92,21 +91,15 @@ public class CameraMovementController : MonoBehaviour
             _targetPitch = Rom.MathHelper.ClampAngle(_targetPitch, GamePreferences.MIN_PITCH, GamePreferences.MAX_PITCH);
             _targetYaw += direction.x * _rotationSpeed * deltaTimeMultiplier;
             _targetYaw = Rom.MathHelper.ClampAngle(_targetYaw, GamePreferences.MIN_YOW, GamePreferences.MAX_YOW);
-   
         }
     }
 
     // Called externally when zoom input is received
-    public void HandleZoomInput(float zoom) // zoom is expected to be 0-1
+    private void HandleZoomInput(float zoom) // zoom is expected to be 0-1
     {
-        IsApplyingZoomInput = zoom > INPUT_ACTIVE_THRESHOLD;
-
-        if (IsApplyingZoomInput)
-        {
-            // Map 0-1 zoom input to FOV range
-            _targetFov = Rom.MathHelper.Map(zoom, 0f, 1f, _maxFov, _minFov); // Reversed mapping: 1 = min FOV (zoomed in)
-            _targetFov = Mathf.Clamp(_targetFov, _minFov, _maxFov);
-        }
+        // Map 0-1 zoom input to FOV range
+        _targetFov = Rom.MathHelper.Map(zoom, 0f, 1f, _maxFov, _minFov); // Reversed mapping: 1 = min FOV (zoomed in)
+        _targetFov = Mathf.Clamp(_targetFov, _minFov, _maxFov);
     }
 
     /// <summary>
@@ -114,7 +107,7 @@ public class CameraMovementController : MonoBehaviour
     /// and sets them as the target values for smooth interpolation.
     /// </summary>
     /// <param name="targetWorldPosition">The world coordinate to aim at.</param>
-    public void AimAtTarget(Vector3 targetWorldPosition)
+    private void AimAtTarget(Vector3 targetWorldPosition)
     {
         Vector3 directionToTarget = targetWorldPosition - CameraRoot.position; // World direction from root
 
@@ -154,7 +147,7 @@ public class CameraMovementController : MonoBehaviour
         // --- Apply Rotation and FOV ---
         Camera.transform.localRotation = Quaternion.Euler(-_currentPitch, 0.0f, 0.0f);
         CameraRoot.rotation = Quaternion.Euler(0.0f, _currentYaw, 0.0f);
-        G.Presenter.TelescopeRotation.Invoke(new Vector2(_currentPitch,_currentYaw));
+        G.Presenter.TelescopeRotation.Invoke(new Vector2(_currentPitch, _currentYaw));
         Camera.fieldOfView = _currentFov;
 
         // --- Update Smoothing State Flags ---
@@ -164,7 +157,6 @@ public class CameraMovementController : MonoBehaviour
 
         // Rotation is smoothing if input was applied OR if it hasn't settled yet
         IsRotationSmoothing = !pitchSettled || !yawSettled;
-        IsZoomSmoothing =  !fovSettled;
-        
+        IsZoomSmoothing = !fovSettled;
     }
 }
