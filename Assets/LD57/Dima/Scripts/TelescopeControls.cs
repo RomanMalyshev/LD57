@@ -5,11 +5,7 @@ using static Globals;
 public class TelescopeControls : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Button _up;
-    [SerializeField] private Button _down;
-    [SerializeField] private Button _right;
-    [SerializeField] private Button _left;
-    [SerializeField] private Button _targetAcquisitionButton;
+    
     private Vector2 _wASDdirection;
     private Vector2 _buttonsDirection;
     private Vector2 _targetPosition;
@@ -17,8 +13,10 @@ public class TelescopeControls : MonoBehaviour
     private bool _isControlButtonDown;
     public void Init()
     {
-        _targetAcquisitionButton.onClick.AddListener(() =>SetTarget());
+        //_targetAcquisitionButton.onClick.AddListener(() =>SetTarget());
         G.Presenter.OnTargetAreaEnter.Subscribe(TargetPositionSet);
+        G.Presenter.OnControlButtonDown.Subscribe(ControlButtonDown);
+        G.Presenter.OnControlButtonUp.Subscribe(ControlButtonUp);
     }
 
     private void Update()
@@ -54,29 +52,10 @@ public class TelescopeControls : MonoBehaviour
         G.Presenter.OnTargetAcquisition?.Invoke(_targetPosition);
     }
     
-    public void ControlButtonDown(string direction)
+    public void ControlButtonDown(Vector2 direction)
     {
         _isControlButtonDown = true;
-
-        switch (direction)
-        {
-            case "up":
-                _buttonsDirection = Vector2.up;
-                Debug.Log("Up");
-                break;
-            case "down":
-                _buttonsDirection = Vector2.down;
-                Debug.Log("Down");
-                break;
-            case "right":
-                _buttonsDirection = Vector2.right;
-                Debug.Log("Right");
-                break;
-            case "left":
-                _buttonsDirection = Vector2.left;
-                Debug.Log("Left");
-                break;
-        } 
+        _buttonsDirection = direction;
     }
 
     public void ControlButtonUp()
@@ -84,4 +63,5 @@ public class TelescopeControls : MonoBehaviour
         _isControlButtonDown = false;
     }
 }
+
 

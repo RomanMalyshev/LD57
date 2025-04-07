@@ -7,11 +7,11 @@ public class GameSettingsPanel : MonoBehaviour
     [SerializeField] private Button _startGameButton;
     [SerializeField] private Slider _volumeSlider;
 
-    public void Init()
+    /*public void Init()
     {
-        _volumeSlider.onValueChanged.AddListener(VolumeChange);
-        _startGameButton.onClick.AddListener(GameStart);
-    }
+        /*_volumeSlider.onValueChanged.AddListener(VolumeChange);
+        _startGameButton.onClick.AddListener(GameStart);#1#
+    }*/
 
     private void VolumeChange(float volumeValue)
     {

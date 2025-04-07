@@ -4,13 +4,7 @@ using static Globals;
 
 public class TelescopeSettings : MonoBehaviour
 {
-    [SerializeField] private Slider _zoomSlider;
-    [SerializeField] private Button _opticFiterButton;
-    [SerializeField] private Button _radioFiterButton;
-    [SerializeField] private Button _infraredFiterButton;
-    [SerializeField] private Button _uVFiterButton;
-    [SerializeField] private Button _endReserchButton;
-    
+    //[SerializeField] private Slider _zoomSlider;
     private float _zoom;
     private bool _isOpticFiterOn = false;
     private bool _isRadioFiterOn = false;
@@ -24,21 +18,19 @@ public class TelescopeSettings : MonoBehaviour
         //TODO: так замыкать нельзя, спроси протом почему
        // G.Presenter.OnZoom.Subscribe(GetZoomValue);
         
-        _opticFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.Optic));
-        _radioFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.Radio));
-        _infraredFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.Infrared));
-        _uVFiterButton.onClick.AddListener(() =>SetFilters(FiltersType.UV));
         
-        G.Presenter.OnReserchIsDone.Subscribe(SetReserchStatus);
-        _endReserchButton.onClick.AddListener(() => EndReserchButtonClicked());
-        _zoomSlider.onValueChanged.AddListener(ZoomChange);
+        //_endReserchButton.onClick.AddListener(() => EndReserchButtonClicked());
+        
+        //G.Presenter.OnReserchIsDone.Subscribe(SetReserchStatus);
+        G.Presenter.OnFilterButtonClick.Subscribe(SetFilters);
+        //_zoomSlider.onValueChanged.AddListener(ZoomChange);
     }
 
-    private void ZoomChange(float value)
+    /*private void ZoomChange(float value)
     {
         _zoom = value;
         G.Presenter.OnZoom?.Invoke(_zoom);
-    }
+    }*/
 
     void SetFilters(FiltersType filtersType)
     {
@@ -46,45 +38,49 @@ public class TelescopeSettings : MonoBehaviour
         {
          case FiltersType.Optic:
              _isOpticFiterOn = !_isOpticFiterOn;
+             Debug.Log("Filter "+filtersType + "" + _isOpticFiterOn);
              G.Presenter.OnFilterSet?.Invoke(FiltersType.Optic, _isOpticFiterOn);
              break;
          case FiltersType.Radio:
              _isRadioFiterOn = !_isRadioFiterOn;
+             Debug.Log("Filter "+filtersType + "" + _isRadioFiterOn);
              G.Presenter.OnFilterSet?.Invoke(FiltersType.Radio, _isRadioFiterOn);
              break;
          case FiltersType.Infrared:
              _isInfraredFiterOn = !_isInfraredFiterOn;
+             Debug.Log("Filter "+filtersType + "" + _isInfraredFiterOn);
              G.Presenter.OnFilterSet?.Invoke(FiltersType.Infrared, _isInfraredFiterOn);
              break;
          case FiltersType.UV:
              _isUVFiterOn = !_isUVFiterOn;
+             Debug.Log("Filter "+filtersType + "" + _isUVFiterOn);
              G.Presenter.OnFilterSet?.Invoke(FiltersType.UV, _isUVFiterOn);
              break;
         }
     }
 
-    private void GetZoomValue(float zoom)
+    /*private void GetZoomValue(float zoom)
     {
         _zoomSlider.value = zoom;
-    }
+    }*/
 
-    public void ZoomChange()
+    /*public void ZoomChange()
     {
         _zoom = _zoomSlider.value;
         G.Presenter.OnZoom?.Invoke(_zoom);
-    }
+    }*/
 
-    private void SetReserchStatus(bool isReserchIsDone)
+    /*private void SetReserchStatus(bool isReserchIsDone)
     {
         _isReserchIsDone = isReserchIsDone;
     }
     private void EndReserchButtonClicked()
     {
         G.Presenter.OnEndOfReserchButtonClicked?.Invoke(_isReserchIsDone);
-    }
+    }*/
 }
 
-enum FiltersType
+public enum FiltersType
 {
     Optic,
     Radio,

@@ -15,7 +15,7 @@ public class ControlPanel : MonoBehaviour
       _telescopeControls.Init();
       _telescopeSettings.Init();
       _infoPanel.Init();
-      _gameSettingsPanel.Init();
+      //_gameSettingsPanel.Init();
       _lokatorPanel.Init();
       //Example
       //G.Presenter.OnMove?.Invoke(Vector2.One);

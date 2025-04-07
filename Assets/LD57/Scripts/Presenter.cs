@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using Utils;
-//using Vector2 = System.Numerics.Vector2;
 
 
 public class Presenter
@@ -17,6 +16,12 @@ public class Presenter
     public SubscribableAction<Vector2> OnTargetAreaEnter = new();
     public SubscribableAction<int> OnGameStarted = new();
     public SubscribableAction<float> OnGameVolumeChange = new();
+    public SubscribableAction<float> OnFrequencyChenge = new();
     public SubscribableAction<float> OnLocation = new();
+    
+    //Controls
+    public SubscribableAction<Vector2> OnControlButtonDown = new();
+    public SubscribableAction OnControlButtonUp = new();
+    public SubscribableAction<FiltersType> OnFilterButtonClick = new();
     
 }
