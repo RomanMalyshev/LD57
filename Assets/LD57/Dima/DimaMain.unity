@@ -777,6 +777,17 @@ MonoBehaviour:
   musicFadeInDuration: 10
   targetAmbientVolume: 0.3
   ambientFadeInDuration: 25
+--- !u!114 &658774793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3957705193996477903, guid: c9cd9f5c00f850e44a4cac94cdb3f3c9, type: 3}
+  m_PrefabInstance: {fileID: 8196206565718904095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8279df570d3257e4b9b811ce258b79ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1199,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 14944162826183332, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 224433396897614341, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1217,6 +1232,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1403483328248536716, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569683608407783276, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
@@ -1292,6 +1311,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4582956158324509238, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4971705759827437152, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1336,6 +1359,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6431645488120119714, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6711973011562395124, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1360,11 +1387,19 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8239472334816285796, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8406909573854000863, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8415646353661674140, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483830794972441385, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
@@ -1547,6 +1582,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944821269683800811, guid: c9cd9f5c00f850e44a4cac94cdb3f3c9, type: 3}
+      propertyPath: _targetButton
+      value: 
+      objectReference: {fileID: 658774793}
     - target: {fileID: 6989411860303562939, guid: c9cd9f5c00f850e44a4cac94cdb3f3c9, type: 3}
       propertyPath: m_Name
       value: ControlPanel

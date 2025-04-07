@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 8
-  _targetButton: {fileID: 0}
+  _targetButton: {fileID: 3957705193996477903}
 --- !u!1 &2757001477445500795
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f289601731b1c4b91297e2e1da2515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonLamps: []
 --- !u!1 &6989411860303562939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1144,10 @@ MonoBehaviour:
   _lokator: {fileID: 5043423310352766760}
   _focus: {fileID: 4187856838288998938}
   _endReaserchButton: {fileID: 445150360646411500}
+  minValue: 0
+  maxValue: 100
+  minAngle: -90
+  maxAngle: 90
 --- !u!1001 &3109890066610052515
 PrefabInstance:
   m_ObjectHideFlags: 0
