@@ -10,7 +10,7 @@
         public const float MAX_FOV = -30f;
         public const float MIN_FOV = -30f;
 
-        public const float MIN_COMPLET_RESERCH = 95f;
+        public const float MIN_COMPLET_RESERCH = 89.9f;
         
         public const string HeloText = "Welcome to the View in Depths.\u2028 Your shift has begun.\u2028 Gaze into the silence of space — where mysteries are born.\u2028 Operate the telescope, detect anomalies, track stars, explore the unknown.\u2028 Every signal tells a story.\u2028 Some of them… must not be missed.";
         public const string Quasar = "Quasar — Class QZ-9\u2028 An extremely luminous galactic core powered by a supermassive black hole. Emits energy across multiple spectra and can be seen from billions of light-years away.";

@@ -8,6 +8,7 @@ public class FilterButton : MonoBehaviour
     
     private void OnMouseDown()
     {
+        Debug.Log("Mouse Down");
         G.Presenter.OnFilterButtonClick?.Invoke(_filtersType);
     }
 }

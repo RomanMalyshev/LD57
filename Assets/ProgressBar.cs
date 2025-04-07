@@ -17,12 +17,13 @@ public class ProgressBar : MonoBehaviour
 
     private void SetProgress(float progress)
     {
-       for (int i = 0; i < (int)progress/10; i++)
+        
+       for (int i = 0; i <Mathf.CeilToInt(progress/10); i++)
        {
            _buttonLamps[i].on = true;
        }
        
-       for (int i = (int)progress/10; i < _buttonLamps.Count; i++)
+       for (int i = Mathf.CeilToInt(progress/10); i < _buttonLamps.Count; i++)
        {
            _buttonLamps[i].on = false;
        }
