@@ -18,6 +18,33 @@ public class Presenter
     public SubscribableAction<float> OnGameVolumeChange = new();
     public SubscribableAction<float> OnFrequencyChenge = new();
     public SubscribableAction<float> OnLocation = new();
+
+
+
+    public SubscribableField<bool> ResearchState = new();
+
+    
+    
+    //Gameplay
+    public SubscribableField<GameStates> PlayerState = new(GameStates.EnterGame);
+    public SubscribableAction OnStartResearch = new();
+    public SubscribableAction OnSendData = new();
+    
+    public SubscribableAction<string> SendText = new();
+    public SubscribableField<float> DetectedObjectPower = new();
+    public SubscribableField<int> TelescopePower = new();
+    public SubscribableField<float> ResearchProgress = new();
+    
+    public SubscribableField<Vector2> TelescopeRotation = new();
+    public SubscribableField<bool> TelescopeRotationXMax = new();
+    public SubscribableField<bool> TelescopeRotationYMax = new();
+
+    public SubscribableField<InSpaceObject> DetectedObject = new();
+    
+    //Settings
+    public SubscribableAction OnStartGame = new();
+    public SubscribableAction OnEndGame = new();
+    public SubscribableField<float> MusicVolume = new();
     
     //Controls
     public SubscribableAction<Vector2> OnControlButtonDown = new();

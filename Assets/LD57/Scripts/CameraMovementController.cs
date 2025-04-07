@@ -1,3 +1,4 @@
+using LD57.Scripts;
 using UnityEngine;
 using static Globals;
 
@@ -13,11 +14,10 @@ public class CameraMovementController : MonoBehaviour
 
     [SerializeField] private float _rotationSmoothTime = 0.1f;
     [SerializeField] private float _zoomSmoothTime = 0.1f;
-    [SerializeField] private float _minFov = 30f;
+    [SerializeField] private float _minFov = 55f;
     [SerializeField] private float _maxFov = 60f;
-    [SerializeField] private float _minPitch = -89f;
-    [SerializeField] private float _maxPitch = 89f;
-    [SerializeField] private float _stopThreshold = 2f; // Angle/FOV difference threshold to consider movement stopped
+   
+    [SerializeField] private float _stopThreshold = 2f;
 
     // Target state
     private float _targetPitch;
@@ -62,6 +62,9 @@ public class CameraMovementController : MonoBehaviour
         IsApplyingZoomInput = false;
         IsRotationSmoothing = false;
         IsZoomSmoothing = false;
+        
+        G.Presenter.OnZoom.Subscribe(HandleZoomInput);
+        
     }
 
     // Called externally (e.g., by Space class) when move input is received
@@ -73,9 +76,12 @@ public class CameraMovementController : MonoBehaviour
         {
             float deltaTimeMultiplier = Time.deltaTime;
             _targetPitch += direction.y * _rotationSpeed * deltaTimeMultiplier;
-            _targetPitch = Rom.MathHelper.ClampAngle(_targetPitch, _minPitch, _maxPitch);
+            _targetPitch = Rom.MathHelper.ClampAngle(_targetPitch, GamePreferences.MIN_PITCH, GamePreferences.MAX_PITCH);
             _targetYaw += direction.x * _rotationSpeed * deltaTimeMultiplier;
-            // Yaw wraps automatically
+            _targetYaw = Rom.MathHelper.ClampAngle(_targetYaw, GamePreferences.MIN_YOW, GamePreferences.MAX_YOW);
+          
+            
+
         }
     }
 
@@ -101,7 +107,7 @@ public class CameraMovementController : MonoBehaviour
         // --- Apply Rotation and FOV ---
         Camera.transform.localRotation = Quaternion.Euler(-_currentPitch, 0.0f, 0.0f);
         CameraRoot.rotation = Quaternion.Euler(0.0f, _currentYaw, 0.0f);
-        
+        G.Presenter.TelescopeRotation.Invoke(new Vector2(_currentPitch,_currentYaw));
         Camera.fieldOfView = _currentFov;
 
         // --- Update Smoothing State Flags ---

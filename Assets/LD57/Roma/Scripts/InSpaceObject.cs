@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InSpaceObject : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public SpriteRenderer Sprite;
+    public float DistanceFromViewer;
+    public bool Exploreded;
+    
+    public float _defaultScale;
+    public float _maxScale;
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void Start()
     {
-        
-    }
+        _defaultScale = Sprite.transform.localScale.x;
+        transform.LookAt(Camera.main.transform); 
+     }
+
+
+
+  
 }

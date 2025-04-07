@@ -11,7 +11,8 @@ public class CameraAudioController : MonoBehaviour
     [SerializeField] private float ZoomActiveThreshold = 0.05f;
     [SerializeField] private float MoveActiveThreshold = 0.05f;
 
-    private CameraMovementController _movementController;
+    [SerializeField] private CameraMovementController _movementController;
+    [SerializeField] private SpaceObjects _spaceObjects;
 
     // Internal state to track if sounds are currently playing
     private bool _isZoomSoundPlaying = false;
@@ -33,7 +34,7 @@ public class CameraAudioController : MonoBehaviour
         if (ZoomSound == null) return;
 
         // Start sound if zoom input is active OR smoothing is happening, and sound isn't already playing
-        bool shouldPlayZoom = _movementController.IsZoomSmoothing;
+        bool shouldPlayZoom = _spaceObjects.IsZoomSmoothing;
         if (shouldPlayZoom && !_isZoomSoundPlaying)
         {
              ZoomSound.StartLoop();

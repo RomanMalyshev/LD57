@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static Globals;
 
@@ -10,30 +11,61 @@ public class Space : MonoBehaviour
     [Tooltip("The main camera being controlled.")]
     public Camera Camera;
 
+    [SerializeField] private SpaceObjects _spaceObjects;
     [Tooltip("The root transform for camera yaw rotation.")]
     public Transform CameraRoot;
 
-    // References to the specialized controller components
     private CameraMovementController _movementController;
     private CameraAudioController _audioController;
     private CameraDetector _detector;
 
-    void Awake()
+    public void Init()
     {
         _movementController = GetComponent<CameraMovementController>();
         _audioController = GetComponent<CameraAudioController>(); 
         _detector = GetComponent<CameraDetector>();
 
-        _movementController.Camera = this.Camera;
-        _movementController.CameraRoot = this.CameraRoot;
+        _movementController.Camera = Camera;
+        _movementController.CameraRoot = CameraRoot;
 
-        _detector.TargetCamera = this.Camera;
+        _detector.TargetCamera = Camera;
+        
+        _movementController.Init();
+        _spaceObjects.Init();
+        G.Presenter.OnMove.Subscribe(_movementController.HandleMoveInput);
     }
 
-    public void Init()
+    public void Update()
     {
-        _movementController.Init();
-        G.Presenter.OnMove.Subscribe(_movementController.HandleMoveInput);
-        G.Presenter.OnZoom.Subscribe(_movementController.HandleZoomInput);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if ( G.Presenter.ResearchState.Value )
+            {
+                if (_detector.CurrentlyDetectedObject == null)
+                {
+                    Debug.Log("Can't send data CurrentlyDetectedObject is null");
+                }
+                else
+                {
+                    G.Presenter.ResearchState.Value = false;
+                    Debug.Log("End Research, Data Sended");
+                }
+
+            }
+            else
+            {
+                if (_detector.CurrentlyDetectedObject == null)
+                {
+                    Debug.Log("Nothing do detect  CurrentlyDetectedObject is null");
+                }
+                else
+                {
+
+                    G.Presenter.ResearchState.Value = true;
+                    Debug.Log("Start Research");
+                }  
+                
+            }
+        }
     }
 }
