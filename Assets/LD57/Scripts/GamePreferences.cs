@@ -12,7 +12,7 @@
 
         public const float MIN_COMPLET_RESERCH = 89.9f;
         
-        public const string HeloText = "Welcome to the View in Depths.\u2028 Your shift has begun.\u2028 Gaze into the silence of space — where mysteries are born.\u2028 Operate the telescope, detect anomalies, track stars, explore the unknown.\u2028 Every signal tells a story.\u2028 Some of them… must not be missed.";
+        public const string HeloText = "Welcome to the View in Depths. Your shift has begun. Gaze into the silence of space — where mysteries are born.\u2028 Detect anomalies, track stars, explore the unknown.\u2028 Every signal tells a story.\u2028 Some of them… must not be missed.\u2028 Press START to begin";
         public const string Quasar = "Quasar — Class QZ-9\u2028 An extremely luminous galactic core powered by a supermassive black hole. Emits energy across multiple spectra and can be seen from billions of light-years away.";
         public const string TinyUFO = "Tiny UFO\u2028 A classic flying saucer straight out of alien cartoons. Small, mysterious, and probably here to \"observe\"... or steal your snacks.";
         public const string SBcClassGalaxy = "SBc-Class Galaxy — Barred Spiral\u2028 A large galaxy with a bright core, wide spiral arms, and active star formation. Emits in UV and infrared; may host a central supermassive black hole.";
@@ -22,7 +22,7 @@
         public const string ArtilecticStation = "Artilectic Station “XERON-Delta”\u2028 An abandoned, post-human structure drifting in Sector 7-Kappa. Glowing modules hint at active AI cores. No signals detected—only a faint quantum echo. Last expedition vanished.";    
         public const string SpaceStationARGOS9 = "Space Station ARGOS-9\u2028 An Atlas-class orbital base used for managing deep space missions. Equipped with communication arrays, shields, and artificial gravity systems. Believed to hold ancient knowledge of a vanished civilization.";    
         public const string Bender = "Bender \"Unit 22\"\u2028 A rebellious welding robot with a love for booze, cigars, and sarcasm. Built for work, but prefers partying and trouble. Runs on alcohol and bad decisions.";    
-        public const string StarcruiserNebulaSerpent = "Starcruiser \"Nebula Serpent\"\u2028 A sleek, high-speed interstellar vessel used for deep-space missions and diplomatic transport. Outfitted with plasma thrusters, stealth mode, and a neural AI pilot system. Known across galaxies for its agility and signature green hull.";    
+        public const string StarcruiserNebulaSerpent = "Cosmos Express — a cargo ship equipped with a unique engine that moves the universe around it instead of the ship itself, allowing it to instantly traverse vast distances.";    
         public const string OrbitalUnit = "Orbital Unit Z-3 \"Sentry\"\u2028 An autonomous surveillance satellite equipped with deep-space scanners and quantum comms. Designed to monitor uncharted regions and detect anomalies beyond known science.";    
         public const string NavorisPrime= "Navoris Prime\u2028 A massive gas giant cloaked in crimson storms. Its volatile atmosphere hides magnetic anomalies and drifting energy beasts. No known vessel has pierced its clouds and returned.";    
         public const string StarcruiserVANTH = "Starcruiser VANTH\u2028 A heavily armored battleship built for interstellar warfare. Features advanced energy shields, long-range cannons, and high-speed warp drives. Operates as a mobile command center in galactic conflicts.";    
