@@ -2146,7 +2146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -2272,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -2650,7 +2650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -2784,7 +2784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -2910,7 +2910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -3008,7 +3008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetZoom
-      value: 12
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
@@ -3044,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
@@ -3170,7 +3170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: ResearchProgress
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6035872730584595178, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: m_LocalScale.x
