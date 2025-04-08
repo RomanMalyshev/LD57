@@ -12,8 +12,11 @@ public class Space : MonoBehaviour
     public Camera Camera;
 
     [SerializeField] private SpaceObjects _spaceObjects;
+
     [Tooltip("The root transform for camera yaw rotation.")]
     public Transform CameraRoot;
+
+    public GameObject Aim;
 
     private CameraMovementController _movementController;
     private CameraAudioController _audioController;
@@ -22,16 +25,17 @@ public class Space : MonoBehaviour
     public void Init()
     {
         _movementController = GetComponent<CameraMovementController>();
-        _audioController = GetComponent<CameraAudioController>(); 
+        _audioController = GetComponent<CameraAudioController>();
         _detector = GetComponent<CameraDetector>();
 
         _movementController.Camera = Camera;
         _movementController.CameraRoot = CameraRoot;
 
         _detector.TargetCamera = Camera;
-        
+
         _movementController.Init();
         _spaceObjects.Init();
+
+        G.Presenter.PlayerState.Subscribe(state => { Aim.gameObject.SetActive(state == GameStates.Exploring || state == GameStates.ResearcObject); });
     }
-    
 }

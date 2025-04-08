@@ -26,7 +26,6 @@ public class SpaceObjects : MonoBehaviour
         G.Presenter.OnZoom.Subscribe(HandleZoomInput);
         G.Presenter.OnFocusChange.Subscribe(focus =>
         {
-            Debug.Log(focus + " focus");
             if (_detectedObject == null) return;
             _detectedObject.SetFocus(focus);
         });
@@ -39,7 +38,6 @@ public class SpaceObjects : MonoBehaviour
 
             _currentScale = _detectedObject.Sprite.transform.localScale;
             _targetScale = _currentScale;
-            Debug.Log(_targetScale);
         });
     }
 
