@@ -49,7 +49,7 @@ public class CameraDetector : MonoBehaviour
             Vector3 closestPointOnRay = camPos + projection;
             float perpDistance = Vector3.Distance(objPos, closestPointOnRay);
             
-            var normalizedValue = 1.0f - Mathf.Clamp01(perpDistance/100f);//sphere collider radius 
+            var normalizedValue = 1.0f - Mathf.Clamp01(perpDistance/160f);//sphere collider radius 
             // Scale to 0-100 range
             G.Presenter.DetectedObjectPower.Value = normalizedValue * 100.0f;
         }
