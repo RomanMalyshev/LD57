@@ -1,8 +1,10 @@
+using LD57.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class InSpaceObject : MonoBehaviour
 {
+    public Objects ObjectType;
     public SpriteRenderer Sprite;
     public float DistanceFromViewer;
     public bool Exploreded;

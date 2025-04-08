@@ -1,3 +1,4 @@
+using LD57.Scripts;
 using UnityEngine;
 
 public class ControlPanel : MonoBehaviour
@@ -7,7 +8,7 @@ public class ControlPanel : MonoBehaviour
    [SerializeField] private InfoPanel _infoPanel;
    [SerializeField] private LokatorPanel _lokatorPanel;
    [SerializeField] private ProgressBar _progressBar;
-
+   [SerializeField] private Slider3D _volume;
    public void Init()
    {
       _telescopeControls.Init();
@@ -15,6 +16,7 @@ public class ControlPanel : MonoBehaviour
       _infoPanel.Init();
       _lokatorPanel.Init();
       _progressBar.Init();
+      _volume.Init();
    }
    
 }

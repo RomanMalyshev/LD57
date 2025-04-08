@@ -15,11 +15,12 @@ public class RotationHandle : MonoBehaviour
     {
         currentAngle = minAngle;
         transform.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
-        G.Presenter.OnZoomSet.Subscribe(SetZoom);
+        G.Presenter.OnFocusSet.Subscribe(SetFocus);
     }
 
     void Update()
     {
+        if(G.Presenter.PlayerState.Value != GameStates.ResearcObject && _rotationHandleType == RotationHandleType.Focus)return;
         if (IsMouseOverHandle())
         {
             float mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
@@ -64,7 +65,7 @@ public class RotationHandle : MonoBehaviour
         return false;
     }
 
-    private void SetZoom(float value)
+    private void SetFocus(float value)
     {
         if (_rotationHandleType == RotationHandleType.Zoom)
         {

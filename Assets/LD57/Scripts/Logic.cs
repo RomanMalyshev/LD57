@@ -50,7 +50,8 @@ public class Logic : MonoBehaviour
         G.Presenter.OnStartResearch.Subscribe(() =>
         {
             if (G.Presenter.PlayerState.Value == GameStates.Exploring &&
-                G.Presenter.DetectedObject.Value != null)
+                G.Presenter.DetectedObject.Value != null && 
+                !G.Presenter.DetectedObject.Value.Reserched)
                 G.Presenter.PlayerState.Value = GameStates.ResearcObject;
             else
                 Debug.LogWarning("Trying to start, from wrong state");
@@ -125,6 +126,14 @@ public class Logic : MonoBehaviour
                 G.Presenter.TelescopeRotationYMax.Value = false;
             }
         });
+        
+        G.Presenter.OnGameVolumeChange.Subscribe(value =>
+        {
+            AudioListener.volume = value;
+            Debug.Log(value);
+        });
+        
+        AudioListener.volume =1f;
     }
 }
 

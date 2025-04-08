@@ -43,17 +43,16 @@ namespace LD57.Scripts
             mouseScreenPos.z = initialZ;
 
             Vector3 currentMouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+            Vector3 targetWorldPos = currentMouseWorldPos + screenPointOffset;
 
-            Vector3 targetPos = currentMouseWorldPos + screenPointOffset;
+            Vector3 targetLocalPos = transform.parent == null ? targetWorldPos : transform.parent.InverseTransformPoint(targetWorldPos);
 
-            Vector3 localTargetPosition = transform.InverseTransformPoint(targetPos);
+            float clampedLocalX = Mathf.Clamp(targetLocalPos.x, _minX, _maxX);
 
-            if ((localTargetPosition.x + transform.localPosition.x) > _minX && (localTargetPosition.x + transform.localPosition.x) < _maxX)
-            {
-                transform.position = new Vector3(targetPos.x, transform.position.y, transform.position.z);
-            }
+            transform.localPosition = new Vector3(clampedLocalX, transform.localPosition.y, transform.localPosition.z);
 
-            _value = (transform.localPosition.x - _minX) / (_maxX - _minX) * (_maxValue - _minValue) + _minValue;
+            _value = Mathf.InverseLerp(_minX, _maxX, clampedLocalX);
+            _value = Mathf.Lerp(_minValue, _maxValue, _value);
 
             switch (_sliderType)
             {

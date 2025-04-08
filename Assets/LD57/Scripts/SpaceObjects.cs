@@ -53,7 +53,11 @@ public class SpaceObjects : MonoBehaviour
 
     private void Update()
     {
-        if (_detectedObject == null) return;
+        if (_detectedObject == null)
+        {
+            G.Presenter.ResearchProgress.Value =0;
+            return;
+        }
         _currentScale = Vector3.SmoothDamp(_currentScale, _targetScale, ref _scaleVelocity, _scaleSmoothTime);
 
         _detectedObject.Sprite.transform.localScale = _currentScale;
@@ -71,8 +75,8 @@ public class SpaceObjects : MonoBehaviour
                     G.Presenter.OnFocusChange.Value / _detectedObject.TargetFocus ;
         var zoomComponent =
             _currentScale.x > _detectedObject.TargetZoom ? 
-                (1f - (_currentScale.x -  _detectedObject.TargetZoom) / _detectedObject.TargetZoom ):
-                _currentScale.x / _detectedObject.TargetZoom;
+                (1f - (_currentScale.x -  _detectedObject.TargetZoom) /  (_detectedObject.TargetZoom- _detectedObject._defaultScale)):
+                (_currentScale.x - _detectedObject._defaultScale) / (_detectedObject.TargetZoom- _detectedObject._defaultScale); 
         
          G.Presenter.ResearchProgress.Value =
             (focusComponent + zoomComponent)/2 * 100 ;
