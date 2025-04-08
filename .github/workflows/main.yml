@@ -78,7 +78,7 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
-          ITCH_GAME: ld57
+          ITCH_GAME: viewinthedepth
           ITCH_USER: noagard
           PACKAGE: build/WebGL
       - name: Cleanup to avoid storage limit
