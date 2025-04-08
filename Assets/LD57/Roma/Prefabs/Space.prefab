@@ -2114,7 +2114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.357
+      value: 0.537
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
@@ -2366,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.461
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
@@ -2618,7 +2618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.241
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
@@ -2752,7 +2752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.36
+      value: 0.569
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
@@ -3012,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.861
+      value: 0.836
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
@@ -3138,7 +3138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: TargetFocus
-      value: 0.216
+      value: 0.588
       objectReference: {fileID: 0}
     - target: {fileID: 2624247147735198562, guid: c16190b94c48f774b84b17a9b5df8857, type: 3}
       propertyPath: _defaultScale
