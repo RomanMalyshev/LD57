@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   CameraRoot: {fileID: 0}
-  _rotationSpeed: 10
+  _rotationSpeed: 7.5
   _rotationSmoothTime: 0.4
   _zoomSmoothTime: 0.6
   _minFov: 57
