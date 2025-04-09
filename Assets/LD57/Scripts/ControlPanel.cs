@@ -42,16 +42,18 @@ public class ControlPanel : MonoBehaviour
 
         [HideInInspector] public Material SpriteMaterial;
     }
+    
 
-    private void Awake()
+
+    public void Init()
     {
+        
         ZoomAndFocus.SetState(false);
         TargetLock.SetState(false);
         SendData.SetState(false);
         Locator.SetState(false);
         Start.SetState(true);
         Monitor.SetState(false);
-
         StartGameScreen.gameObject.SetActive(true);
 
         foreach (var prize in Prizes)
@@ -63,10 +65,7 @@ public class ControlPanel : MonoBehaviour
             prize.SpriteMaterial.SetFloat(_greyLuminosityProperty, 1f);
             prize.SpriteMaterial.SetFloat(_alphaProperty, 0.15f);
         }
-    }
-
-    public void Init()
-    {
+        
         _telescopeControls.Init();
         _telescopeSettings.Init();
         _infoPanel.Init();
