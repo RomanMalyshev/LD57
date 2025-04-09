@@ -1046,6 +1046,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 584584377}
+    - target: {fileID: 4328488122825579735, guid: c9cd9f5c00f850e44a4cac94cdb3f3c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6989411860303562939, guid: c9cd9f5c00f850e44a4cac94cdb3f3c9, type: 3}
       propertyPath: m_Name
       value: ControlPanel
@@ -1114,13 +1118,14 @@ GameObject:
   - component: {fileID: 686307798}
   - component: {fileID: 686307797}
   - component: {fileID: 686307796}
+  - component: {fileID: 686307800}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &686307796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1212,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &686307800
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686307795}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 917920603756507390, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: Aim
       value: 
-      objectReference: {fileID: 686307795}
+      objectReference: {fileID: 686307800}
     - target: {fileID: 917920603756507390, guid: 66c1434b351d8af4aa11fb666eb7d64c, type: 3}
       propertyPath: Camera
       value: 

@@ -139,7 +139,7 @@ public class Logic : MonoBehaviour
             Debug.Log(value);
         });
         
-        AudioListener.volume =1f;
+        AudioListener.volume =0.5f;
     }
 }
 

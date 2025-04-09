@@ -27,6 +27,7 @@ Material:
   m_ValidKeywords:
   - BLURISHD_ON
   - GLOW_ON
+  - GREYSCALE_ON
   m_InvalidKeywords:
   - _BLURHD_ON
   m_LightmapFlags: 4
@@ -143,7 +144,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 1
+    - _Alpha: 0.152
     - _AlphaClip: 0
     - _AlphaCutoffValue: 0.25
     - _AlphaOutlineBlend: 0

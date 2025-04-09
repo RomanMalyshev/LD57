@@ -43,8 +43,6 @@ public class ControlPanel : MonoBehaviour
         [HideInInspector] public Material SpriteMaterial;
     }
     
-
-
     public void Init()
     {
         
@@ -79,7 +77,6 @@ public class ControlPanel : MonoBehaviour
             TargetLock.SetState(state == GameStates.Exploring && G.Presenter.DetectedObjectPower.Value > 50f);
             SendData.SetState(state == GameStates.ResearcObject && G.Presenter.ResearchProgress.Value > GamePreferences.MIN_COMPLET_RESERCH);
             Locator.SetState(state != GameStates.EnterGame && state != GameStates.EndGame);
-            Debug.Log(state != GameStates.EnterGame && state != GameStates.EndGame);
             Start.SetState(state == GameStates.EnterGame);
             Monitor.SetState(state != GameStates.EnterGame && state != GameStates.EndGame);
 

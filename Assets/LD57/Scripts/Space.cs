@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using static Globals;
 
@@ -16,14 +17,16 @@ public class Space : MonoBehaviour
     [Tooltip("The root transform for camera yaw rotation.")]
     public Transform CameraRoot;
 
-    public GameObject Aim;
+    public CanvasGroup Aim;
 
     private CameraMovementController _movementController;
     private CameraAudioController _audioController;
     private CameraDetector _detector;
-
+    private bool _firstEnter = true;
+    
     public void Init()
     {
+        Aim.alpha = 0f;
         _movementController = GetComponent<CameraMovementController>();
         _audioController = GetComponent<CameraAudioController>();
         _detector = GetComponent<CameraDetector>();
@@ -37,8 +40,33 @@ public class Space : MonoBehaviour
         _spaceObjects.Init();
 
         G.Presenter.PlayerState.Subscribe(state =>
-        { 
-            Aim.gameObject.SetActive(state == GameStates.Exploring || state == GameStates.ResearcObject);
+        {
+            //StopAllCoroutines();
+            StartCoroutine(SetAimState(state == GameStates.Exploring || state == GameStates.ResearcObject));
         });
+        
+        
+    }
+
+    private IEnumerator SetAimState(bool state)
+    {
+        var target = state ? 1f : 0f;
+        var current = Aim.alpha;
+        var elapsedTime = 0f;
+        var duration = _firstEnter ? 3f:1.5f;
+        if (_firstEnter)
+        {
+            yield return new WaitForSeconds(2f);
+        }
+
+        _firstEnter = false;
+        while (elapsedTime <= duration)
+        {
+            Aim.alpha = Mathf.Lerp(current,target ,elapsedTime/duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Aim.alpha = target;
     }
 }
