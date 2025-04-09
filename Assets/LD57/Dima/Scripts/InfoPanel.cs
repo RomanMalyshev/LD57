@@ -14,6 +14,7 @@ public class InfoPanel : MonoBehaviour
     private string _objectText;
     private bool _isTextisDone;
     private GameStates _gamestate;
+
     public void Init()
     {
         //OnInfoPanelTextChange
@@ -23,9 +24,19 @@ public class InfoPanel : MonoBehaviour
         G.Presenter.OnSendData.Subscribe(SetSearchingText);
         G.Presenter.PlayerState.Subscribe(SetState);
         _text.text = "";
+
+        G.Presenter.LastObjectWasResearched.Subscribe(val =>
+        {
+            if (val)
+                StartCoroutine(c_Output(GamePreferences.EndText));
+        });
+    }
+
+    public void SetStartText()
+    {
         StartCoroutine(c_Output(GamePreferences.HeloText));
     }
-    
+
     private void SetState(GameStates state)
     {
         _gamestate = state;
@@ -84,7 +95,7 @@ public class InfoPanel : MonoBehaviour
         _text.text = "";
         StartCoroutine(c_Output("Searching..."));
     }
-    
+
     IEnumerator c_Output(string text)
     {
         foreach (var chr in text)

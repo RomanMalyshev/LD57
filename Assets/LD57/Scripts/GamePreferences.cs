@@ -12,7 +12,7 @@
 
         public const float MIN_COMPLET_RESERCH = 89.9f;
         
-        public const string HeloText = "Welcome to the View in Depths. Your shift has begun. Gaze into the silence of space — where mysteries are born.\u2028 Detect anomalies, track stars, explore the unknown.\u2028 Every signal tells a story.\u2028 Some of them… must not be missed.\u2028 Press START to begin";
+        public const string HeloText = "Welcome to the View in Depths. Your shift has begun. Gaze into the silence of space — where mysteries are born.\u2028 Detect anomalies, track stars, explore the unknown.\u2028 Every signal tells a story.\u2028 Some of them… must not be missed.\u2028 Press TURN ON to begin";
         public const string Quasar = "Quasar — Class QZ-9\u2028 An extremely luminous galactic core powered by a supermassive black hole. Emits energy across multiple spectra and can be seen from billions of light-years away.";
         public const string TinyUFO = "Tiny UFO\u2028 A classic flying saucer straight out of alien cartoons. Small, mysterious, and probably here to \"observe\"... or steal your snacks.";
         public const string SBcClassGalaxy = "SBc-Class Galaxy — Barred Spiral\u2028 A large galaxy with a bright core, wide spiral arms, and active star formation. Emits in UV and infrared; may host a central supermassive black hole.";
@@ -31,5 +31,7 @@
         public const string VireliaSpiral = "Virelia Spiral\u2028 The Virelia Spiral is a colossal galaxy shimmering with ancient starlight. Its core pulses with unknown energy, drawing explorers and dreamers from across the cosmos in search of forgotten civilizations and stellar secrets.";    
         public const string BlazingStar = "Blazing Star\u2028 A fiery ball of plasma burning in the depths of space. Hot, bright, and the life source for any nearby planets!";    
             
+        public const string EndText = "Congratulations, you've found all the objects! You've done an excellent job as an astronomer. Your work here is finished, but remember, the depths of space still hold many secrets...";
+
     }
 }

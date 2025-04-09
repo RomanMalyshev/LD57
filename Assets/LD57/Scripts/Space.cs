@@ -36,6 +36,9 @@ public class Space : MonoBehaviour
         _movementController.Init();
         _spaceObjects.Init();
 
-        G.Presenter.PlayerState.Subscribe(state => { Aim.gameObject.SetActive(state == GameStates.Exploring || state == GameStates.ResearcObject); });
+        G.Presenter.PlayerState.Subscribe(state =>
+        { 
+            Aim.gameObject.SetActive(state == GameStates.Exploring || state == GameStates.ResearcObject);
+        });
     }
 }

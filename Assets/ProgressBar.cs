@@ -25,11 +25,13 @@ public class ProgressBar : MonoBehaviour
 
         for (int i = 0; i < Mathf.CeilToInt(progress / 10); i++)
         {
+            if(_buttonLamps[i].on)continue; 
             _buttonLamps[i].SetState(true);
         }
 
         for (int i = Mathf.CeilToInt(progress / 10); i < _buttonLamps.Count; i++)
         {
+             if(_buttonLamps[i].on  == false)continue; 
             _buttonLamps[i].SetState(false);
         }
     }

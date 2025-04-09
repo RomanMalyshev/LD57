@@ -19,6 +19,16 @@ public class InSpaceObject : MonoBehaviour
     private Material _spriteMaterial;
     public bool Reserched;
     
+    
+    private readonly int _pixelSizeProperty = Shader.PropertyToID("_PixelateSize");
+    private readonly int _glowColorProperty = Shader.PropertyToID("_GlowColor");
+    private readonly int _glowIntensityProperty = Shader.PropertyToID("_Glow");
+    private readonly int _glowGlobalIntensityProperty = Shader.PropertyToID("_GlowGlobal");
+
+    private readonly int _blurProperty = Shader.PropertyToID("_BlurIntensity");
+    private readonly int _waveStrengthProperty = Shader.PropertyToID("_RoundWaveStrength");
+    private readonly int _waveSpeedProperty = Shader.PropertyToID("_RoundWaveSpeed");
+    
     private void Start()
     {
         _defaultScale = Sprite.transform.localScale.x;
@@ -27,10 +37,6 @@ public class InSpaceObject : MonoBehaviour
         Sprite.material = _spriteMaterial;
         SetResearchedState(Reserched);
     }
-
-    private readonly int _blurProperty = Shader.PropertyToID("_BlurIntensity");
-    private readonly int _waveStrengthProperty = Shader.PropertyToID("_RoundWaveStrength");
-    private readonly int _waveSpeedProperty = Shader.PropertyToID("_RoundWaveSpeed");
 
     public void SetFocus(float focus)
     {
@@ -51,8 +57,6 @@ public class InSpaceObject : MonoBehaviour
         _spriteMaterial.SetFloat(_waveSpeedProperty, waveSpeed);
     }
     
-    private readonly int _pixelSizeProperty = Shader.PropertyToID("_PixelateSize");
-    
     public void SetZoom(float zoom)
     {
         if(Reserched) return;
@@ -66,12 +70,6 @@ public class InSpaceObject : MonoBehaviour
         _spriteMaterial.SetFloat(_pixelSizeProperty, pixelSize);
     }
     
-    
-    
-    private readonly int _glowColorProperty = Shader.PropertyToID("_GlowColor");
-    private readonly int _glowIntensityProperty = Shader.PropertyToID("_Glow");
-    private readonly int _glowGlobalIntensityProperty = Shader.PropertyToID("_GlowGlobal");
-
     public void SetResearchedState(bool state)
     {
         Reserched = state;

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Globals;
@@ -38,6 +39,15 @@ public class SpaceObjects : MonoBehaviour
 
             _currentScale = _detectedObject.Sprite.transform.localScale;
             _targetScale = _currentScale;
+        });
+        
+        G.Presenter.ObjectWasReserched.Subscribe(spaceObject =>
+        {
+            var allObjectWasResearched = _spaceObjects.All(it => it.Reserched);
+            if (allObjectWasResearched)
+            {
+                G.Presenter.LastObjectWasResearched.Value = true;
+            }
         });
     }
 

@@ -8,6 +8,8 @@ public class CameraDetector : MonoBehaviour
     [Tooltip("The camera to cast the ray from.")]
     public Camera TargetCamera;
 
+    [SerializeField] private AudioSource _bip;
+
     [Header("Detection Settings")]
     [SerializeField] private float _raycastLength = 100f; // Configurable raycast length
 
@@ -48,11 +50,31 @@ public class CameraDetector : MonoBehaviour
             Vector3 projection = Vector3.Project(camToObj, camForward);
             Vector3 closestPointOnRay = camPos + projection;
             float perpDistance = Vector3.Distance(objPos, closestPointOnRay);
-            
-            var normalizedValue = 1.0f - Mathf.Clamp01(perpDistance/160f);//sphere collider radius 
+
+            var normalizedValue = 1.0f - Mathf.Clamp01(perpDistance / 160f); //sphere collider radius 
             // Scale to 0-100 range
             G.Presenter.DetectedObjectPower.Value = normalizedValue * 100.0f;
         }
+
+        UpdateBip();
+    }
+
+    private float _bipDuration;
+    private float _bipElapsedTime;
+    private void UpdateBip()
+    {
+        if (G.Presenter.DetectedObjectPower.Value <= 0.3f || 
+            G.Presenter.PlayerState.Value != GameStates.Exploring) return;
+
+        _bipDuration = Rom.MathHelper.Map(G.Presenter.DetectedObjectPower.Value, 0f, 100f, 2f, 0.5f);
+       
+        if (_bipElapsedTime >= _bipDuration)
+        {
+            _bip.Play();
+            _bipElapsedTime = 0f;
+        }
+
+        _bipElapsedTime += Time.deltaTime;
     }
 
     private void PerformDetection()

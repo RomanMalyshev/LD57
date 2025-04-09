@@ -66,6 +66,7 @@ public class ButtonLamp : MonoBehaviour
 
     public void SetState(bool state, bool immediate = false)
     {
+     
         on = state;
         Color targetEmissionColor;
 

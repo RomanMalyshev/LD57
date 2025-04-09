@@ -38,6 +38,12 @@ public class Logic : MonoBehaviour
 
         G.Presenter.OnStartGame.Subscribe(() =>
         {
+            if (G.Presenter.LastObjectWasResearched.Value)
+            {
+                G.Presenter.PlayerState.Value = GameStates.EndGame;
+                return;
+            }
+
             if (G.Presenter.PlayerState.Value == GameStates.EnterGame)
             {
                 StartCoroutine(ReturnFocus());

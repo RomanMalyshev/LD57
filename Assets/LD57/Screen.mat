@@ -190,8 +190,8 @@ Material:
     - _DstBlendAlpha: 0
     - _EditorDrawers: 6
     - _EnvironmentReflections: 1
-    - _FadeAmount: -0.1
-    - _FadeBurnGlow: 2
+    - _FadeAmount: 0.396
+    - _FadeBurnGlow: 60
     - _FadeBurnTransition: 0.01
     - _FadeBurnWidth: 0
     - _FishEyeUvAmount: 0.114
@@ -206,7 +206,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Glow: 15.6
+    - _Glow: 83.9
     - _GlowGlobal: 40.8
     - _GradBlend: 1
     - _GradBoostX: 1.2
@@ -287,7 +287,7 @@ Material:
     - _ShakeUvX: 1.5
     - _ShakeUvY: 1
     - _ShineGlow: 1
-    - _ShineLocation: 0.5
+    - _ShineLocation: 0.984
     - _ShineRotate: 0
     - _ShineWidth: 0.1
     - _Smoothness: 0.5

@@ -73,16 +73,19 @@ namespace Utils
     public class SubscribableField<T> : SubscribableAction<T>
     {
         private T _value;
-
+        private T _previousValue;
         public T Value
         {
             get => _value;
             set
             {
+                _previousValue = _value;
                 _value = value;
                 Invoke(value);
             }
         }
+        
+        public T PreviousValue => _previousValue;
 
         public SubscribableField(T value = default)
         {

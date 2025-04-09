@@ -40,7 +40,8 @@ public class Presenter
 
     public SubscribableField<InSpaceObject> DetectedObject = new();
     public SubscribableField<InSpaceObject> ObjectWasReserched = new();
-    
+
+    public SubscribableField<bool> LastObjectWasResearched = new();
     //Settings
     public SubscribableAction OnStartGame = new();
     public SubscribableAction OnEndGame = new();
@@ -51,5 +52,6 @@ public class Presenter
     public SubscribableAction OnControlButtonUp = new();
     public SubscribableAction<FiltersType> OnFilterButtonClick = new();
     public SubscribableAction<bool> OnTargetButtonDown = new();
+    
     
 }
